@@ -13,12 +13,12 @@
         android:theme="@style/Theme.PracticaAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".smartsolarActivity"
+            android:name=".ui.view.smartsolar.smartsolarActivity"
             android:exported="false"
             android:label="@string/title_activity_smartsolar"
             android:theme="@style/Theme.PracticaAndroid" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.view.listadofacturas.listadoFacturasActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
