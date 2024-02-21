@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -65,8 +65,8 @@
                 android:clickable="true"
                 android:contentDescription="@string/icono_detalles_text"
                 android:focusable="true"
-                android:paddingStart="10dp"
-                android:paddingEnd="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="0dp"
                 android:src="@drawable/ic_back_arrow_icon"
                 app:tint="@android:color/darker_gray" />
         </LinearLayout>

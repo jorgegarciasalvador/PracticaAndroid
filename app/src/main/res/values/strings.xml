@@ -17,8 +17,13 @@
     <string name="default_precio">54,56</string>
     <string name="default_moneda">€</string>
     <string name="icono_detalles_text">Icono detalles</string>
+    //Popup_not_working
+    <string name="informacion_text">Informacion</string>
+    <string name="mensaje_text">Esta funcionalidad aún no está disponible</string>
+    <string name="close_icon_text">Icono cerrar</string>
     //others
     <string name="title_activity_smartsolar">smartsolar_activity</string>
+
 
 
 </resources>

@@ -4,15 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practicaandroid.R
-import com.example.practicaandroid.data.FacturaModel
+import com.example.practicaandroid.model.FacturaModel
 import com.example.practicaandroid.databinding.FacturaDetailRecyclerviewBinding
+import com.example.practicaandroid.ui.viewmodel.ViewModelFacturas
 
 class facturasAdapter(
-    private val dataSet: Array<FacturaModel>,
+    private val facturas: List<FacturaModel>,
     private val context: Context
 ) :
     RecyclerView.Adapter<facturasAdapter.ViewHolder>() {
@@ -27,7 +28,7 @@ class facturasAdapter(
         fun bind(factura: FacturaModel, context: Context) {
             importeFactura.text = factura.importe.toString()
             fechaFactura.text = factura.fecha
-            if (factura.estado) {
+            if (factura.estado == "Pendiente de pago") {
                 estadoFactura.text = getString(context, R.string.pendienteDePago_text)
                 estadoFactura.visibility = View.VISIBLE
             } else {
@@ -36,7 +37,14 @@ class facturasAdapter(
             }
 
             masDetalles.setOnClickListener {
-                Toast.makeText(context, "Click", Toast.LENGTH_SHORT).show()
+                val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+                builder.setTitle(getString(context, R.string.informacion_text))
+                    .setMessage(getString(context, R.string.mensaje_text))
+                    .setNegativeButton("Cerrar") { _, _ ->
+
+                    }
+                val dialog:AlertDialog = builder.create()
+                dialog.show()
             }
         }
     }
@@ -52,10 +60,10 @@ class facturasAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(dataSet[position], context)
+        holder.bind(facturas[position], context)
     }
 
     override fun getItemCount(): Int {
-        return dataSet.size
+        return facturas.size
     }
 }
