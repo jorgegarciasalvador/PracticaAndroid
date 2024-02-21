@@ -30,7 +30,7 @@
                     android:layout_height="20dp"
                     android:contentDescription="@string/back_icon_text"
                     android:src="@drawable/ic_back_arrow_icon"
-                    android:tint="@color/green"/>
+                    app:tint="@color/green" />
 
                 <TextView
                     android:id="@+id/tv_consumo"
@@ -45,8 +45,8 @@
                     android:layout_height="20dp"
                     android:contentDescription="@string/filter_icon_text"
                     android:src="@drawable/filtericon_3x"
-                    android:tint="@color/black"
-                    android:layout_gravity="end"/>
+                    android:layout_gravity="end"
+                    app:tint="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -59,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/facturas_text"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>
@@ -68,6 +68,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_listado_facturas"
+        android:paddingHorizontal="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

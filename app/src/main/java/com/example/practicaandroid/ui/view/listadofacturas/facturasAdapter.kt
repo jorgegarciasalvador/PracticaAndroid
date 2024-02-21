@@ -5,28 +5,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practicaandroid.R
+import com.example.practicaandroid.data.FacturaModel
 import com.example.practicaandroid.databinding.FacturaDetailRecyclerviewBinding
 
 class facturasAdapter(
-    private val dataSet: Array<String>,
-    private val binding: FacturaDetailRecyclerviewBinding,
+    private val dataSet: Array<FacturaModel>,
     private val context: Context
 ) :
     RecyclerView.Adapter<facturasAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View, binding: FacturaDetailRecyclerviewBinding) :
-        RecyclerView.ViewHolder(view) {
+    class ViewHolder(binding: FacturaDetailRecyclerviewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         val importeFactura = binding.tvImporteFactura
         val estadoFactura = binding.tvEstadoFactura
         val fechaFactura = binding.tvFechaFactura
         val masDetalles = binding.ivMasDetallesFactura
 
-        fun bind(dato: String, context: Context) {
-            importeFactura.text = dato
-            estadoFactura.text = dato
-            fechaFactura.text = dato
+        fun bind(factura: FacturaModel, context: Context) {
+            importeFactura.text = factura.importe.toString()
+            fechaFactura.text = factura.fecha
+            if (factura.estado) {
+                estadoFactura.text = getString(context, R.string.pendienteDePago_text)
+                estadoFactura.visibility = View.VISIBLE
+            } else {
+                estadoFactura.text = ""
+                estadoFactura.visibility = View.INVISIBLE
+            }
+
             masDetalles.setOnClickListener {
                 Toast.makeText(context, "Click", Toast.LENGTH_SHORT).show()
             }
@@ -34,14 +42,17 @@ class facturasAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.factura_detail_recyclerview, parent, false)
-        return ViewHolder(view, binding)
+        val binding =
+            FacturaDetailRecyclerviewBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(dataSet[position], context)
-        println(dataSet[position])
     }
 
     override fun getItemCount(): Int {
