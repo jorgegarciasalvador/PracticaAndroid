@@ -11,11 +11,12 @@ import com.example.practicaandroid.databinding.ActivityListadofacturasBinding
 import com.example.practicaandroid.databinding.FacturaDetailRecyclerviewBinding
 import com.example.practicaandroid.ui.viewmodel.ViewModelFacturas
 
-class listadoFacturasActivity : AppCompatActivity() {
+class ListadoFacturasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListadofacturasBinding
     private lateinit var detailBinding: FacturaDetailRecyclerviewBinding
     private val facturasViewModel: ViewModelFacturas by viewModels()
+    private lateinit var facturasAdapter: facturasAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListadofacturasBinding.inflate(layoutInflater)
@@ -24,9 +25,14 @@ class listadoFacturasActivity : AppCompatActivity() {
         detailBinding = FacturaDetailRecyclerviewBinding.inflate(layoutInflater)
 
         facturasViewModel.onCreate()
-
+        facturasAdapter = facturasAdapter(emptyList(),this)
         facturasViewModel.facturas.observe(this) {
-            setUpRecyclerView(it)
+            facturasAdapter = facturasAdapter(it,this)
+
+            val recyclerView: RecyclerView = binding.rvListadoFacturas
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = facturasAdapter
+        //setUpRecyclerView(it)
         }
 
         binding.ivFilterIcon.setOnClickListener {
@@ -40,10 +46,6 @@ class listadoFacturasActivity : AppCompatActivity() {
 
     private fun setUpRecyclerView(facturas:List<FacturaModel>) {
 
-        val facturasAdapter = facturasAdapter(facturas,this)
 
-        val recyclerView: RecyclerView = binding.rvListadoFacturas
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = facturasAdapter
     }
 }
