@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PracticaAndroid</string>
+    <string name="back_icon_text">Back icon</string>
+    <string name="consumo_text">Consumo</string>
+    <string name="filter_icon_text">Filter icon</string>
+    <string name="facturas_text">Facturas</string>
+    <string name="default_date_text">31 Ago 2020</string>
+    <string name="pendienteDePago_text">Pendiente de pago</string>
+    <string name="default_precio">54,56€</string>
+    <string name="title_activity_smartsolar">smartsolar_activity</string>
+    <string name="atras_text">Atras</string>
+    <string name="smartsolar_title_text">Smart Solar</string>
+    <string name="mi_instalacion_text">Mi instalacion</string>
+    <string name="energia_text">Energia</string>
+    <string name="detallets_text">Detalles</string>
+</resources>
