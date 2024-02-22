@@ -5,9 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.practicaandroid.domain.GetFacturasUseCase
 import com.example.practicaandroid.model.FacturaModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ViewModelFacturas(
+@HiltViewModel
+class ViewModelFacturas @Inject constructor(
     private val getFacturasUseCase: GetFacturasUseCase
 ) : ViewModel() {
 

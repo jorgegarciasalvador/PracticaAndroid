@@ -23,7 +23,13 @@
     <string name="close_icon_text">Icono cerrar</string>
     //others
     <string name="title_activity_smartsolar">smartsolar_activity</string>
-
+    //Toolbar_personalizado
+    <string name="icono_izquierda_text">Icono izquierda</string>
+    <string name="texto_izquierda_text">Texto izquierda</string>
+    <string name="icono_derecha_text">Icono derecha</string>
+    <string name="titulo_toolbar_text">Titulo</string>
+    //Filtro
+    <string name="filtrar_facturas_titulo_text">Filtrar Facturas</string>
 
 
 </resources>

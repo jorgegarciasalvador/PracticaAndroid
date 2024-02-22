@@ -6,15 +6,15 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.practicaandroid.model.FacturaModel
 import com.example.practicaandroid.databinding.ActivityListadofacturasBinding
-import com.example.practicaandroid.databinding.FacturaDetailRecyclerviewBinding
+import com.example.practicaandroid.model.FacturaModel
 import com.example.practicaandroid.ui.viewmodel.ViewModelFacturas
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ListadoFacturasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListadofacturasBinding
-    private lateinit var detailBinding: FacturaDetailRecyclerviewBinding
     private val facturasViewModel: ViewModelFacturas by viewModels()
     private lateinit var facturasAdapter: facturasAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,20 +22,14 @@ class ListadoFacturasActivity : AppCompatActivity() {
         binding = ActivityListadofacturasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        detailBinding = FacturaDetailRecyclerviewBinding.inflate(layoutInflater)
 
         facturasViewModel.onCreate()
-        facturasAdapter = facturasAdapter(emptyList(),this)
-        facturasViewModel.facturas.observe(this) {
-            facturasAdapter = facturasAdapter(it,this)
 
-            val recyclerView: RecyclerView = binding.rvListadoFacturas
-            recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.adapter = facturasAdapter
-        //setUpRecyclerView(it)
+        facturasViewModel.facturas.observe(this) {
+            setUpRecyclerView(it)
         }
 
-        binding.ivFilterIcon.setOnClickListener {
+        binding.toolbar.setOnClickListener {
             Toast.makeText(
                 this,
                 "Esto te manda a la pagina de filtros que voy a dejar para el ultimo por pereza",
@@ -44,8 +38,11 @@ class ListadoFacturasActivity : AppCompatActivity() {
         }
     }
 
-    private fun setUpRecyclerView(facturas:List<FacturaModel>) {
+    private fun setUpRecyclerView(facturas: List<FacturaModel>) {
+        facturasAdapter = facturasAdapter(facturas)
 
-
+        val recyclerView: RecyclerView = binding.rvListadoFacturas
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = facturasAdapter
     }
 }

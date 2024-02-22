@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".ui.PracticaAndroidApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,12 +16,15 @@
         android:theme="@style/Theme.PracticaAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".ui.view.smartsolar.smartsolarActivity"
+            android:name=".ui.view.filtros.FiltrosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.smartsolar.SmartsolarActivity"
             android:exported="false"
             android:label="@string/title_activity_smartsolar"
             android:theme="@style/Theme.PracticaAndroid" />
         <activity
-            android:name=".ui.view.listadofacturas.listadoFacturasActivity"
+            android:name=".ui.view.listadofacturas.ListadoFacturasActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

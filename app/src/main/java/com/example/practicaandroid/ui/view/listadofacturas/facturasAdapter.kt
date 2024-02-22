@@ -1,6 +1,5 @@
 package com.example.practicaandroid.ui.view.listadofacturas
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,59 +7,66 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practicaandroid.R
-import com.example.practicaandroid.model.FacturaModel
 import com.example.practicaandroid.databinding.FacturaDetailRecyclerviewBinding
-import com.example.practicaandroid.ui.viewmodel.ViewModelFacturas
+import com.example.practicaandroid.model.FacturaModel
 
 class facturasAdapter(
     private val facturas: List<FacturaModel>,
-    private val context: Context
 ) :
     RecyclerView.Adapter<facturasAdapter.ViewHolder>() {
+    class ViewHolder(view: View) :
+        RecyclerView.ViewHolder(view) {
+        val binding = FacturaDetailRecyclerviewBinding.bind(view)
 
-    class ViewHolder(binding: FacturaDetailRecyclerviewBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        val importeFactura = binding.tvImporteFactura
-        val estadoFactura = binding.tvEstadoFactura
-        val fechaFactura = binding.tvFechaFactura
-        val masDetalles = binding.ivMasDetallesFactura
-
-        fun bind(factura: FacturaModel, context: Context) {
-            importeFactura.text = factura.importe.toString()
-            fechaFactura.text = factura.fecha
+        fun bind(factura: FacturaModel) {
+            binding.tvImporteFactura.text = factura.importe.toString()
+            binding.tvFechaFactura.text = factura.fecha
             if (factura.estado == "Pendiente de pago") {
-                estadoFactura.text = getString(context, R.string.pendienteDePago_text)
-                estadoFactura.visibility = View.VISIBLE
+                binding.tvEstadoFactura.text =
+                    getString(binding.tvEstadoFactura.context, R.string.pendienteDePago_text)
+                binding.tvEstadoFactura.visibility = View.VISIBLE
             } else {
-                estadoFactura.text = ""
-                estadoFactura.visibility = View.INVISIBLE
+                binding.tvEstadoFactura.text = ""
+                binding.tvEstadoFactura.visibility = View.INVISIBLE
             }
 
-            masDetalles.setOnClickListener {
-                val builder: AlertDialog.Builder = AlertDialog.Builder(context)
-                builder.setTitle(getString(context, R.string.informacion_text))
-                    .setMessage(getString(context, R.string.mensaje_text))
+            binding.ivMasDetallesFactura.setOnClickListener {
+                val builder: AlertDialog.Builder =
+                    AlertDialog.Builder(binding.ivMasDetallesFactura.context)
+                builder.setTitle(
+                    getString(
+                        binding.ivMasDetallesFactura.context,
+                        R.string.informacion_text
+                    )
+                )
+                    .setMessage(
+                        getString(
+                            binding.ivMasDetallesFactura.context,
+                            R.string.mensaje_text
+                        )
+                    )
                     .setNegativeButton("Cerrar") { _, _ ->
 
                     }
-                val dialog:AlertDialog = builder.create()
+                val dialog: AlertDialog = builder.create()
                 dialog.show()
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding =
-            FacturaDetailRecyclerviewBinding.inflate(
-                LayoutInflater.from(parent.context),
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return ViewHolder(
+            layoutInflater.inflate(
+                R.layout.factura_detail_recyclerview,
                 parent,
                 false
             )
-        return ViewHolder(binding)
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(facturas[position], context)
+        holder.bind(facturas[position])
     }
 
     override fun getItemCount(): Int {

@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practicaandroid.databinding.ActivitySmartsolarBinding
 import com.google.android.material.tabs.TabLayout
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SmartsolarActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySmartsolarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
