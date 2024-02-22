@@ -1,8 +1,8 @@
 package com.example.practicaandroid.ui.view.filtros
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
-import com.example.practicaandroid.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.practicaandroid.databinding.ActivityFiltrosBinding
 import com.google.android.material.slider.Slider
 
@@ -13,7 +13,7 @@ class FiltrosActivity : AppCompatActivity() {
         binding = ActivityFiltrosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.sliderImporte.addOnSliderTouchListener(object : Slider.OnSliderTouchListener{
+        binding.sliderImporte.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {
                 binding.tvImporteSlider.text = binding.sliderImporte.value.toInt().toString()
             }
@@ -27,7 +27,8 @@ class FiltrosActivity : AppCompatActivity() {
         }
     }
 
-    private fun clearFilters(){
+    @SuppressLint("SetTextI18n")
+    private fun clearFilters() {
         binding.etFechaDesde.setText("dia/mes/año")
         binding.etFechaHasta.setText("dia/mes/año")
         binding.sliderImporte.value = 100F
