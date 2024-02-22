@@ -30,6 +30,20 @@
     <string name="titulo_toolbar_text">Titulo</string>
     //Filtro
     <string name="filtrar_facturas_titulo_text">Filtrar Facturas</string>
+    <string name="desde_text">Desde: </string>
+    <string name="default_fecha">dia/mes/año</string>
+    <string name="hasta_text">Hasta:</string>
+    <string name="por_un_importe_text">Por un importe</string>
+    <string name="default_importe">100</string>
+    <string name="por_estado_text">Por estado</string>
+    <string name="pagadas_text">Pagadas</string>
+    <string name="anuladas_text">Anuladas</string>
+    <string name="cuota_fija_text">Cuota Fija</string>
+    <string name="pendientes_de_pago_text">Pendientes de pago</string>
+    <string name="plan_de_pago_text">Plan de pago</string>
+    <string name="btn_aplicar_text">Aplicar</string>
+    <string name="btn_eliminar_filtros">Eliminar Filtros</string>
+    <string name="tv_con_fecha_de_emision_text">Con fecha de emision</string>
 
 
 </resources>

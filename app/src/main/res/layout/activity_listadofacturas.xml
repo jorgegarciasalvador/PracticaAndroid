@@ -12,18 +12,26 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:icono_izquierda="@drawable/ic_back_arrow_icon"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingVertical="20dp"
         app:icono_derecha="@drawable/filtericon_3x"
+        app:icono_izquierda="@drawable/ic_back_arrow_icon"
         app:texto_izquierda="@string/consumo_text"
-        app:texto_titulo="@string/facturas_text"
-        />
+        app:texto_titulo="@string/facturas_text" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_listado_facturas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp">
+        android:paddingHorizontal="30dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/Alosfiltros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a los filtros" />
 
 </LinearLayout>
