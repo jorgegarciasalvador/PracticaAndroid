@@ -5,6 +5,5 @@
         <attr name="texto_izquierda" format="string"/>
         <attr name="icono_derecha" format="reference"/>
         <attr name="texto_titulo" format="string"/>
-        <attr name="icono_derecha_onclick" format="reference"/>
     </declare-styleable>
 </resources>

@@ -2,7 +2,6 @@ package com.example.practicaandroid.ui.view.listadofacturas
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,15 +30,8 @@ class ListadoFacturasActivity : AppCompatActivity() {
             setUpRecyclerView(it)
         }
 
-        binding.Alosfiltros.setOnClickListener {
+        binding.toolbar.binding.iconoDerecha.setOnClickListener {
             onClickFiltros()
-        }
-        binding.toolbar.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Esto te manda a la pagina de filtros que voy a dejar para el ultimo por pereza",
-                Toast.LENGTH_SHORT
-            ).show()
         }
 
     }
@@ -52,7 +44,7 @@ class ListadoFacturasActivity : AppCompatActivity() {
         recyclerView.adapter = facturasAdapter
     }
 
-    private fun onClickFiltros(){
+    private fun onClickFiltros() {
         val intent = Intent(this, FiltrosActivity::class.java)
         startActivity(intent)
     }
