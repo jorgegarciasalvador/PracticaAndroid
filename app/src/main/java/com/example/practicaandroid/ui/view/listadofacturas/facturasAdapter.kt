@@ -20,7 +20,7 @@ class facturasAdapter(
 
         fun bind(factura: FacturaModel) {
             binding.tvImporteFactura.text = factura.importe.toString()
-            binding.tvFechaFactura.text = factura.fecha
+            binding.tvFechaFactura.text = factura.fecha.toString()
             if (factura.estado == "Pendiente de pago") {
                 binding.tvEstadoFactura.text =
                     getString(binding.tvEstadoFactura.context, R.string.pendienteDePago_text)

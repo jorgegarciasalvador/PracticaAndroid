@@ -36,10 +36,10 @@
     <string name="por_un_importe_text">Por un importe</string>
     <string name="default_importe">100</string>
     <string name="por_estado_text">Por estado</string>
-    <string name="pagadas_text">Pagadas</string>
-    <string name="anuladas_text">Anuladas</string>
+    <string name="pagadas_text">Pagada</string>
+    <string name="anuladas_text">Anulada</string>
     <string name="cuota_fija_text">Cuota Fija</string>
-    <string name="pendientes_de_pago_text">Pendientes de pago</string>
+    <string name="pendientes_de_pago_text">Pendiente de pago</string>
     <string name="plan_de_pago_text">Plan de pago</string>
     <string name="btn_aplicar_text">Aplicar</string>
     <string name="btn_eliminar_filtros">Eliminar Filtros</string>

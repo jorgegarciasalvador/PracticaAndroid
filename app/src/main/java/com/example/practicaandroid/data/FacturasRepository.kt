@@ -25,4 +25,14 @@ class FacturasRepository @Inject constructor(
     suspend fun clearFacturas() {
         facturasDao.deleteAllFacturas()
     }
+
+    suspend fun getFacturasFiltradas(
+        estado: String,
+        fechaInferior: String,
+        fechaSuperior: String,
+        importe: Float
+    ): List<FacturaModel> {
+        return facturasDao.getFacturasFiltradas(estado, importe)
+            .map { it.toDomain() }
+    }
 }

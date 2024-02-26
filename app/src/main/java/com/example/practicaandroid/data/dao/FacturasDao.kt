@@ -16,4 +16,15 @@ interface FacturasDao {
 
     @Query("DELETE FROM facturas_table")
     suspend fun deleteAllFacturas()
+
+    @Query(
+        "SELECT * FROM facturas_table " +
+                "WHERE descEstado = :estado " +
+                "AND importeOrdenacion <= :importe " +
+                "ORDER BY fecha DESC"
+    )
+    suspend fun getFacturasFiltradas(
+        estado: String,
+        importe: Float
+    ): List<FacturaEntity>
 }

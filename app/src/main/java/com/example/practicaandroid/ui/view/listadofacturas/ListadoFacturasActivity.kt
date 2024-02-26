@@ -26,7 +26,7 @@ class ListadoFacturasActivity : AppCompatActivity() {
 
         facturasViewModel.onCreate()
 
-        facturasViewModel.facturas.observe(this) {
+        facturasViewModel.facturas_.observe(this) {
             setUpRecyclerView(it)
         }
 
@@ -34,6 +34,29 @@ class ListadoFacturasActivity : AppCompatActivity() {
             onClickFiltros()
         }
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == -1) {
+            data.let {
+                facturasViewModel.filtrar(
+                    data!!.getStringExtra("estado")!!,
+                    data.getFloatExtra("importe", 0F),
+                    data.getStringExtra("fechaInferior")!!,
+                    data.getStringExtra("fechaSuperior")!!
+                )
+            }
+        }else{
+            facturasViewModel.onCreate()
+        }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        facturasViewModel.facturas_.observe(this) {
+            setUpRecyclerView(it)
+        }
     }
 
     private fun setUpRecyclerView(facturas: List<FacturaModel>) {
@@ -46,6 +69,6 @@ class ListadoFacturasActivity : AppCompatActivity() {
 
     private fun onClickFiltros() {
         val intent = Intent(this, FiltrosActivity::class.java)
-        startActivity(intent)
+        startActivityForResult(intent, 1)
     }
 }

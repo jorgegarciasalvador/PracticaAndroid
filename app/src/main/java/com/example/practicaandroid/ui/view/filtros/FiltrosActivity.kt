@@ -1,21 +1,33 @@
 package com.example.practicaandroid.ui.view.filtros
 
+import android.app.Activity
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
+import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practicaandroid.databinding.ActivityFiltrosBinding
+import com.example.practicaandroid.ui.view.listadofacturas.ListadoFacturasActivity
+import com.example.practicaandroid.ui.viewmodel.ViewModelFacturas
 import com.google.android.material.slider.Slider
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
+@AndroidEntryPoint
 class FiltrosActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFiltrosBinding
     private val calendar = Calendar.getInstance()
     lateinit var sharedPreferences: SharedPreferences
+    private val viewModel: ViewModelFacturas by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +73,7 @@ class FiltrosActivity : AppCompatActivity() {
         binding.etFechaDesde.setOnClickListener {
             showDatePicker(it as EditText)
         }
+
         binding.etFechaHasta.setOnClickListener {
             showDatePicker(it as EditText)
         }
@@ -70,6 +83,8 @@ class FiltrosActivity : AppCompatActivity() {
         }
 
         binding.toolbar.binding.iconoDerecha.setOnClickListener {
+            val intent = Intent(this, ListadoFacturasActivity::class.java)
+            setResult(Activity.RESULT_CANCELED, intent)
             onClickClose()
         }
 
@@ -78,16 +93,52 @@ class FiltrosActivity : AppCompatActivity() {
         }
     }
 
-    private fun aplicarFiltros(){
-        Toast.makeText(this,"Me falta terminar este boton para que filtre de verdad", Toast.LENGTH_SHORT).show()
+    private fun aplicarFiltros() {
+        val importe = binding.sliderImporte.value
+        val fechaSuperior = binding.etFechaHasta.text.toString()
+        val fechaInferior = binding.etFechaDesde.text.toString()
+        var estado: String = ""
+        var checkboxschecked = 0
+        for (i in 0 until binding.layoutChecboxContainer.childCount) {
+            val view: View = binding.layoutChecboxContainer.getChildAt(i)
+            if (view is LinearLayout) {
+                for (j in 0 until view.childCount) {
+                    val view2: View = view.getChildAt(j)
+                    if (view2 is CheckBox && view2.isChecked) {
+                        checkboxschecked++
+                        estado = (view.getChildAt(j + 1) as TextView).text.toString()
+                    }
+                }
+            }
+        }
+
+        if (false /*fechaSuperior < fechaInferior*/) {
+            Toast.makeText(this, "Algo esta mal con las fechas maquina", Toast.LENGTH_SHORT).show()
+        } else if (checkboxschecked > 1) {
+            Toast.makeText(
+                this,
+                "No puedes seleccionar varios checks de estado a la vez",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            val intent = Intent(this, ListadoFacturasActivity::class.java)
+            intent.putExtra("estado", estado)
+            intent.putExtra("importe", importe)
+            intent.putExtra("fechaSuperior", fechaSuperior)
+            intent.putExtra("fechaInferior", fechaInferior)
+
+            setResult(Activity.RESULT_OK, intent)
+            onClickClose()
+        }
     }
+
     private fun showDatePicker(view: EditText) {
         val datePickerDialog = DatePickerDialog(
             this,
             { DatePicker, year: Int, montOfYear: Int, dayOfMonth: Int ->
                 val selectedDate = Calendar.getInstance()
                 selectedDate.set(year, montOfYear, dayOfMonth)
-                val dateFormat = SimpleDateFormat("dd//MM/yyyy", Locale.getDefault())
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                 val formattedDate = dateFormat.format(selectedDate.time)
                 view.setText(formattedDate)
             },
@@ -96,7 +147,6 @@ class FiltrosActivity : AppCompatActivity() {
             calendar.get(Calendar.DAY_OF_MONTH)
         )
         datePickerDialog.show()
-
     }
 
     private fun clearFilters() {
@@ -123,6 +173,7 @@ class FiltrosActivity : AppCompatActivity() {
         editorPreferences.putBoolean("plandepago", binding.cbPlandepago.isChecked)
         editorPreferences.putBoolean("pendientesdepago", binding.cbPendientesdepago.isChecked)
         editorPreferences.apply()
+
         finish()
     }
 }
