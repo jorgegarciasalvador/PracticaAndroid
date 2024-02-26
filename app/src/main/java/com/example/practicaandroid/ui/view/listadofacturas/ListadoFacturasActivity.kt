@@ -1,8 +1,10 @@
 package com.example.practicaandroid.ui.view.listadofacturas
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,6 +38,8 @@ class ListadoFacturasActivity : AppCompatActivity() {
 
     }
 
+    @Deprecated("Deprecated in Java")
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == -1) {

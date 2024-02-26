@@ -16,7 +16,7 @@ class GetFacturasFiltradasUseCase @Inject constructor(
         fechaSuperior: String,
         fechaInferior: String
     ): List<FacturaModel> {
-        var facturas = repository.getFacturasFiltradas(
+        val facturas = repository.getFacturasFiltradas(
             estado = estado,
             importe = importe,
             fechaInferior = fechaInferior,

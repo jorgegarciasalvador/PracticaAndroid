@@ -1,5 +1,6 @@
 package com.example.practicaandroid.ui.view.filtros
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -27,7 +28,6 @@ class FiltrosActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFiltrosBinding
     private val calendar = Calendar.getInstance()
     lateinit var sharedPreferences: SharedPreferences
-    private val viewModel: ViewModelFacturas by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,7 +97,7 @@ class FiltrosActivity : AppCompatActivity() {
         val importe = binding.sliderImporte.value
         val fechaSuperior = binding.etFechaHasta.text.toString()
         val fechaInferior = binding.etFechaDesde.text.toString()
-        var estado: String = ""
+        var estado= ""
         var checkboxschecked = 0
         for (i in 0 until binding.layoutChecboxContainer.childCount) {
             val view: View = binding.layoutChecboxContainer.getChildAt(i)
@@ -149,6 +149,7 @@ class FiltrosActivity : AppCompatActivity() {
         datePickerDialog.show()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun clearFilters() {
         binding.etFechaDesde.setText("dia/mes/año")
         binding.etFechaHasta.setText("dia/mes/año")
