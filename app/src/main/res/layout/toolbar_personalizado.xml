@@ -31,7 +31,7 @@
                         android:id="@+id/icono_izquierda"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:contentDescription="@string/icono_izquierda_text"
+                        android:contentDescription="@string/toolbar_personalizado_icono_izquierda_description"
                         android:src="@drawable/ic_back_arrow_icon"
                         app:tint="@color/greenDefaultApp" />
 
@@ -39,7 +39,7 @@
                         android:id="@+id/texto_izquierda"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/texto_izquierda_text"
+                        android:text="@string/toolbar_personalizado_texto_izquierda_text"
                         android:textColor="@color/greenDefaultApp" />
                 </LinearLayout>
 
@@ -53,7 +53,7 @@
                         android:id="@+id/icono_derecha"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:contentDescription="@string/icono_derecha_text"
+                        android:contentDescription="@string/toolbar_personalizado_icono_derecha_description"
                         android:src="@drawable/filtericon_3x"
                         app:tint="@color/black" />
                 </LinearLayout>
@@ -69,7 +69,7 @@
                     android:id="@+id/toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/titulo_toolbar_text"
+                    android:text="@string/toolbar_personalizado_titulo_text"
                     android:textSize="30sp"
                     android:textStyle="bold" />
             </LinearLayout>

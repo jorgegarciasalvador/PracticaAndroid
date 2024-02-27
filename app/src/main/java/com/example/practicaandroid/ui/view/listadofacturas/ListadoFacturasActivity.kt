@@ -83,7 +83,7 @@ class ListadoFacturasActivity : AppCompatActivity() {
             builder.setTitle(
                 ContextCompat.getString(
                     this,
-                    R.string.informacion_text
+                    R.string.popup_not_working_titulo_informacion_text
                 )
             )
                 .setMessage(

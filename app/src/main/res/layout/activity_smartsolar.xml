@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:paddingVertical="20dp"
         app:icono_izquierda="@drawable/ic_back_arrow_icon"
-        app:texto_titulo="@string/smartsolar_title_text"
-        app:texto_izquierda="@string/atras_text">
+        app:texto_titulo="@string/activity_smartsolar_toolbar_title_smartsolar_text"
+        app:texto_izquierda="@string/activity_smartsolar_toolbar_texto_izquierda_text">
 
 
     </com.example.practicaandroid.ui.view.reutilizables.ToolbarPersonalizado>
@@ -28,19 +28,19 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/mi_instalacion_text"
+            android:text="@string/activity_smartsolar_tablayout_mi_instalacion_text"
             android:clickable="true"
             android:focusable="true" />
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/energia_text"
+            android:text="@string/activity_smartsolar_tablayout_energia_text"
             android:clickable="true"
             android:focusable="true" />
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/detalles_text"
+            android:text="@string/activity_smartsolar_tablayout_detalles_text"
             android:clickable="true"
             android:focusable="true" />
     </com.google.android.material.tabs.TabLayout>

@@ -17,8 +17,8 @@
         android:paddingVertical="20dp"
         app:icono_derecha="@drawable/filtericon_3x"
         app:icono_izquierda="@drawable/ic_back_arrow_icon"
-        app:texto_izquierda="@string/consumo_text"
-        app:texto_titulo="@string/facturas_text" />
+        app:texto_izquierda="@string/activity_listadofacturas_toolbar_texto_izquierda_consumo"
+        app:texto_titulo="@string/activity_listadofacturas_toolbar_titulo_facturas_text" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_listado_facturas"

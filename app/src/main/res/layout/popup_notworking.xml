@@ -11,18 +11,18 @@
             android:layout_width="0dp"
             android:layout_weight="9"
             android:layout_height="wrap_content"
-            android:text="@string/informacion_text"/>
+            android:text="@string/popup_not_working_titulo_informacion_text"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="20dp"
             android:src="@drawable/close_icon"
-            android:contentDescription="@string/close_icon_text" />
+            android:contentDescription="@string/popu_not_working_close_icon_description" />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/funcionalidad_no_disponible_text"
+        android:text="@string/popup_not_working_funcionalidad_no_disponible_text"
         android:textAlignment="center"/>
 
 </LinearLayout>

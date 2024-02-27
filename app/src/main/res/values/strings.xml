@@ -1,56 +1,59 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">PracticaAndroid</string>
+    //Activity_bienvenida
+    <string name="activity_bienvenida_texto_btn_allistado">Al listado de facturas</string>
+    <string name="activity_bienvenida_texto_btn_asmartsolar">A Smart Solar</string>
     //activity_listadofacturas
-    <string name="back_icon_text">Back icon</string>
-    <string name="consumo_text">Consumo</string>
-    <string name="filter_icon_text">Filter icon</string>
-    <string name="facturas_text">Facturas</string>
+    <string name="activity_listadofacturas_toolbar_back_icon_description">Back icon</string>
+    <string name="activity_listadofacturas_toolbar_texto_izquierda_consumo">Consumo</string>
+    <string name="activity_listadofacturas_toolbar_filter_icon_description">Filter icon</string>
+    <string name="activity_listadofacturas_toolbar_titulo_facturas_text">Facturas</string>
     //activity_smartsolar
-    <string name="atras_text">Atras</string>
-    <string name="smartsolar_title_text">Smart Solar</string>
-    <string name="mi_instalacion_text">Mi instalacion</string>
-    <string name="energia_text">Energia</string>
-    <string name="detalles_text">Detalles</string>
+    <string name="activity_smartsolar_toolbar_texto_izquierda_text">Atras</string>
+    <string name="activity_smartsolar_toolbar_title_smartsolar_text">Smart Solar</string>
+    <string name="activity_smartsolar_tablayout_mi_instalacion_text">Mi instalacion</string>
+    <string name="activity_smartsolar_tablayout_energia_text">Energia</string>
+    <string name="activity_smartsolar_tablayout_detalles_text">Detalles</string>
     //factura_detail_rv
-    <string name="default_date_text">31 Ago 2020</string>
-    <string name="pendienteDePago_text">Pendiente de pago</string>
-    <string name="default_precio">54,56</string>
-    <string name="default_moneda">€</string>
-    <string name="icono_detalles_text">Icono detalles</string>
+    <string name="facturadetail_rv_default_date_text">31 Ago 2020</string>
+    <string name="facturadetail_rv_pendienteDePago_text">Pendiente de pago</string>
+    <string name="facturadetail_rv_default_precio">54,56</string>
+    <string name="facturadetail_rv_default_moneda">€</string>
+    <string name="facturadetail_rv_icono_detalles_description">Icono detalles</string>
     //Popup_not_working
-    <string name="informacion_text">Informacion</string>
-    <string name="funcionalidad_no_disponible_text">Esta funcionalidad aún no está disponible</string>
-    <string name="close_icon_text">Icono cerrar</string>
+    <string name="popup_not_working_titulo_informacion_text">Informacion</string>
+    <string name="popup_not_working_funcionalidad_no_disponible_text">Esta funcionalidad aún no está disponible</string>
+    <string name="popu_not_working_close_icon_description">Icono cerrar</string>
     //others
     <string name="title_activity_smartsolar">smartsolar_activity</string>
     <string name="filtro_vacio_text">No hay ninguna factura que se encuentre bajo esas condiciones</string>
     //Toolbar_personalizado
-    <string name="icono_izquierda_text">Icono izquierda</string>
-    <string name="texto_izquierda_text">Texto izquierda</string>
-    <string name="icono_derecha_text">Icono derecha</string>
-    <string name="titulo_toolbar_text">Titulo</string>
-    //Filtro
-    <string name="filtrar_facturas_titulo_text">Filtrar Facturas</string>
-    <string name="desde_text">Desde: </string>
-    <string name="default_fecha">dia/mes/año</string>
-    <string name="hasta_text">Hasta:</string>
-    <string name="por_un_importe_text">Por un importe</string>
-    <string name="default_importe">100</string>
-    <string name="por_estado_text">Por estado</string>
-    <string name="pagadas_text">Pagada</string>
-    <string name="anuladas_text">Anulada</string>
-    <string name="cuota_fija_text">Cuota Fija</string>
-    <string name="pendientes_de_pago_text">Pendiente de pago</string>
-    <string name="plan_de_pago_text">Plan de pago</string>
-    <string name="btn_aplicar_text">Aplicar</string>
-    <string name="btn_eliminar_filtros">Eliminar Filtros</string>
-    <string name="tv_con_fecha_de_emision_text" tools:ignore="Typos">Con fecha de emision</string>
+    <string name="toolbar_personalizado_icono_izquierda_description">Icono izquierda</string>
+    <string name="toolbar_personalizado_texto_izquierda_text">Texto izquierda</string>
+    <string name="toolbar_personalizado_icono_derecha_description">Icono derecha</string>
+    <string name="toolbar_personalizado_titulo_text">Titulo</string>
+    //Activity filtros
+    <string name="activity_filtros_tv_titulo_text">Filtrar Facturas</string>
+    <string name="activity_filtros_tv_fecha_desde_text">Desde: </string>
+    <string name="activity_filtros_default_fecha">dia/mes/año</string>
+    <string name="activity_filtros_tv_fecha_hasta_text">Hasta:</string>
+    <string name="activity_filtros_tv_por_un_importe_text">Por un importe</string>
+    <string name="activity_filtros_default_importe">100</string>
+    <string name="activity_filtros_tv_por_estado_text">Por estado</string>
+    <string name="activity_filtros_tv_pagadas_text">Pagada</string>
+    <string name="activity_filtros_tv_anuladas_text">Anulada</string>
+    <string name="activity_filtros_tv_cuota_fija_text">Cuota Fija</string>
+    <string name="activity_filtros_tv_pendientes_de_pago_text">Pendiente de pago</string>
+    <string name="activity_filtros_tv_plan_de_pago_text">Plan de pago</string>
+    <string name="activity_filtros_btn_aplicar_text">Aplicar</string>
+    <string name="activity_filtros_btn_eliminar_filtros_text">Eliminar Filtros</string>
+    <string name="activity_filtros_tv_con_fecha_de_emision_text" tools:ignore="Typos">Con fecha de emision</string>
+    //fragment_energia
     <string name="fragment_energia_image_contentDescription">Trabajando</string>
     <string name="fragment_energia_mensajeInformativo">Estamos trabajando en mejorar la App. Tus paneles solares siguen produciendo, en breve podrás seguir viendo tu produccion solar.Sentimos las molestias</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="activity_bienvenida_texto_btn_allistado">Al listado de facturas</string>
-    <string name="activity_bienvenida_texto_btn_asmartsolar">A Smart Solar</string>
+    //fragment_miinstalacion
+    <string name="fragment_instalacion_texto_informativo">Aqui tienes los datos de tu instalacion fotovoltaica en tiempo real.</string>
+    <string name="fragment_instalacion_descripcion_imagen">Grafico datos de tu instalacion</string>
 
 
 </resources>

@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingVertical="5dp"
-                tools:text="@string/default_date_text" />
+                tools:text="@string/facturadetail_rv_default_date_text" />
 
             <TextView
                 android:id="@+id/tv_estado_factura"
@@ -33,7 +33,7 @@
                 android:paddingTop="5dp"
                 android:paddingBottom="10dp"
                 android:textColor="@color/red"
-                tools:text="@string/pendienteDePago_text" />
+                tools:text="@string/facturadetail_rv_pendienteDePago_text" />
         </LinearLayout>
 
         <LinearLayout
@@ -49,21 +49,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                tools:text="@string/default_precio" />
+                tools:text="@string/facturadetail_rv_default_precio" />
 
             <TextView
                 android:id="@+id/tv_simbolo_moneda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                tools:text="@string/default_moneda" />
+                tools:text="@string/facturadetail_rv_default_moneda" />
 
             <ImageView
                 android:id="@+id/iv_mas_detalles_factura"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:clickable="true"
-                android:contentDescription="@string/icono_detalles_text"
+                android:contentDescription="@string/facturadetail_rv_icono_detalles_description"
                 android:focusable="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="0dp"

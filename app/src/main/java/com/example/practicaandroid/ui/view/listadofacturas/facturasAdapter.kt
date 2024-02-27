@@ -25,7 +25,7 @@ class facturasAdapter(
             when (factura.estado) {
                 "Pendiente de pago" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.pendienteDePago_text)
+                        getString(binding.tvEstadoFactura.context, R.string.facturadetail_rv_pendienteDePago_text)
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -37,7 +37,7 @@ class facturasAdapter(
 
                 "Anulada" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.anuladas_text)
+                        getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_anuladas_text)
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -49,7 +49,7 @@ class facturasAdapter(
 
                 "Pagada" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.pagadas_text)
+                        getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_pagadas_text)
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -61,7 +61,7 @@ class facturasAdapter(
 
                 "Cuota fija" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.cuota_fija_text)
+                        getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_cuota_fija_text)
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -73,7 +73,7 @@ class facturasAdapter(
 
                 "Plan de pago" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.plan_de_pago_text)
+                        getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_plan_de_pago_text)
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -96,13 +96,13 @@ class facturasAdapter(
                 builder.setTitle(
                     getString(
                         binding.ivMasDetallesFactura.context,
-                        R.string.informacion_text
+                        R.string.popup_not_working_titulo_informacion_text
                     )
                 )
                     .setMessage(
                         getString(
                             binding.ivMasDetallesFactura.context,
-                            R.string.funcionalidad_no_disponible_text
+                            R.string.popup_not_working_funcionalidad_no_disponible_text
                         )
                     )
                     .setNegativeButton("Cerrar") { _, _ ->

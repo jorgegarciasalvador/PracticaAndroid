@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:paddingVertical="20dp"
         app:icono_derecha="@drawable/close_icon"
-        app:texto_titulo="@string/filtrar_facturas_titulo_text" />
+        app:texto_titulo="@string/activity_filtros_tv_titulo_text" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tv_con_fecha_de_emision_text" />
+            android:text="@string/activity_filtros_tv_con_fecha_de_emision_text" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/desde_text" />
+                    android:text="@string/activity_filtros_tv_fecha_desde_text" />
 
                 <EditText
                     android:id="@+id/et_fechaDesde"
@@ -55,7 +55,7 @@
                     android:inputType="date"
                     android:paddingHorizontal="15dp"
                     android:paddingVertical="5dp"
-                    android:text="@string/default_fecha"
+                    android:text="@string/activity_filtros_default_fecha"
                     tools:ignore="KeyboardInaccessibleWidget,LabelFor" />
             </LinearLayout>
 
@@ -68,7 +68,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hasta_text" />
+                    android:text="@string/activity_filtros_tv_fecha_hasta_text" />
 
                 <EditText
                     android:id="@+id/et_fechaHasta"
@@ -81,7 +81,7 @@
                     android:inputType="date"
                     android:paddingHorizontal="15dp"
                     android:paddingVertical="5dp"
-                    android:text="@string/default_fecha"
+                    android:text="@string/activity_filtros_default_fecha"
                     tools:ignore="KeyboardInaccessibleWidget,LabelFor" />
             </LinearLayout>
         </LinearLayout>
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/por_un_importe_text" />
+                android:text="@string/activity_filtros_tv_por_un_importe_text" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -113,13 +113,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
-                    android:text="@string/default_importe"
+                    android:text="@string/activity_filtros_default_importe"
                     android:textColor="@color/greenDefaultApp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/default_moneda"
+                    android:text="@string/facturadetail_rv_default_moneda"
                     android:textColor="@color/greenDefaultApp" />
             </LinearLayout>
 
@@ -149,7 +149,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/por_estado_text" />
+                android:text="@string/activity_filtros_tv_por_estado_text" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -165,7 +165,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pagadas_text" />
+                    android:text="@string/activity_filtros_tv_pagadas_text" />
             </LinearLayout>
 
             <LinearLayout
@@ -182,7 +182,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/anuladas_text" />
+                    android:text="@string/activity_filtros_tv_anuladas_text" />
             </LinearLayout>
 
             <LinearLayout
@@ -199,7 +199,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cuota_fija_text" />
+                    android:text="@string/activity_filtros_tv_cuota_fija_text" />
             </LinearLayout>
 
             <LinearLayout
@@ -216,7 +216,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pendientes_de_pago_text" />
+                    android:text="@string/activity_filtros_tv_pendientes_de_pago_text" />
             </LinearLayout>
 
             <LinearLayout
@@ -233,7 +233,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/plan_de_pago_text" />
+                    android:text="@string/activity_filtros_tv_plan_de_pago_text" />
             </LinearLayout>
         </LinearLayout>
 
@@ -243,7 +243,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="@color/greenDefaultApp"
-            android:text="@string/btn_aplicar_text"
+            android:text="@string/activity_filtros_btn_aplicar_text"
             android:textColor="@color/white" />
 
         <Button
@@ -252,7 +252,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="@android:color/transparent"
-            android:text="@string/btn_eliminar_filtros"
+            android:text="@string/activity_filtros_btn_eliminar_filtros_text"
             android:textColor="@color/grey" />
     </LinearLayout>
 </LinearLayout>
