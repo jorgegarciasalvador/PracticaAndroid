@@ -4,6 +4,7 @@ import com.example.practicaandroid.data.FacturasRepository
 import com.example.practicaandroid.model.FacturaModel
 import com.example.practicaandroid.model.toDatabase
 import java.text.SimpleDateFormat
+import java.util.Locale
 import javax.inject.Inject
 
 class GetFacturasFiltradasUseCase @Inject constructor(
@@ -22,15 +23,17 @@ class GetFacturasFiltradasUseCase @Inject constructor(
             importe = importe,
         )
 
-        val formatter = SimpleDateFormat("dd/MM/yyyy")
+        val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val fechaInferiorFormateada = formatter.parse(fechaInferior)
         val fechaSuperiorFormateada = formatter.parse(fechaSuperior)
         return if (facturas.isNotEmpty()) {
-            var facturasFiltradas = mutableListOf<FacturaModel>()
+            val facturasFiltradas = mutableListOf<FacturaModel>()
             facturas.forEach {
                 val fechaFormateada = formatter.parse(it.fecha)
-                if((fechaFormateada.compareTo(fechaInferiorFormateada) < 0 ) && (fechaFormateada.compareTo(fechaSuperiorFormateada) > 0) ){
-                    facturasFiltradas.add(it)
+                if (fechaFormateada != null) {
+                    if((fechaFormateada.compareTo(fechaInferiorFormateada) < 0 ) && (fechaFormateada.compareTo(fechaSuperiorFormateada) > 0) ){
+                        facturasFiltradas.add(it)
+                    }
                 }
             }
 

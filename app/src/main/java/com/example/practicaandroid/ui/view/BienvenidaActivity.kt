@@ -1,9 +1,8 @@
 package com.example.practicaandroid.ui.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.practicaandroid.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.practicaandroid.databinding.ActivityBienvenidaBinding
 import com.example.practicaandroid.ui.view.listadofacturas.ListadoFacturasActivity
 import com.example.practicaandroid.ui.view.smartsolar.SmartsolarActivity

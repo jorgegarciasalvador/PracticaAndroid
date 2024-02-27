@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">PracticaAndroid</string>
     //activity_listadofacturas
     <string name="back_icon_text">Back icon</string>
@@ -44,11 +44,13 @@
     <string name="plan_de_pago_text">Plan de pago</string>
     <string name="btn_aplicar_text">Aplicar</string>
     <string name="btn_eliminar_filtros">Eliminar Filtros</string>
-    <string name="tv_con_fecha_de_emision_text">Con fecha de emision</string>
+    <string name="tv_con_fecha_de_emision_text" tools:ignore="Typos">Con fecha de emision</string>
     <string name="fragment_energia_image_contentDescription">Trabajando</string>
     <string name="fragment_energia_mensajeInformativo">Estamos trabajando en mejorar la App. Tus paneles solares siguen produciendo, en breve podrás seguir viendo tu produccion solar.Sentimos las molestias</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="activity_bienvenida_texto_btn_allistado">Al listado de facturas</string>
+    <string name="activity_bienvenida_texto_btn_asmartsolar">A Smart Solar</string>
 
 
 </resources>

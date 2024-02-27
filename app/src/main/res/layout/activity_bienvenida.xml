@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.BienvenidaActivity"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center">
+    tools:context=".ui.view.BienvenidaActivity">
 
     <Button
         android:id="@+id/btn_listado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Al listado de facturas"
         android:layout_gravity="center"
-        />
+        android:text="@string/activity_bienvenida_texto_btn_allistado" />
+
     <Button
         android:id="@+id/btn_smartSolar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A Smart Solar"
         android:layout_gravity="center"
-        />
+        android:text="@string/activity_bienvenida_texto_btn_asmartsolar" />
 </LinearLayout>

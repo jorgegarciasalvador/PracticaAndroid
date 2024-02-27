@@ -127,26 +127,28 @@ class FiltrosActivity : AppCompatActivity() {
             }
         }
 
-        val formatter = SimpleDateFormat("dd/MM/yyyy")
+        val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val fechaInferiorFormateada = formatter.parse(fechaInferior)
         val fechaSuperiorFormateada = formatter.parse(fechaSuperior)
-        if (fechaInferiorFormateada.compareTo(fechaSuperiorFormateada) > 0) {
-            Toast.makeText(this, "Revisa las fechas seleccionadas, puede ser que quiera crear un bucle espacio-temporal", Toast.LENGTH_SHORT).show()
-        } else if (checkboxschecked > 1) {
-            Toast.makeText(
-                this,
-                "No puedes seleccionar varios checks de estado a la vez",
-                Toast.LENGTH_SHORT
-            ).show()
-        } else {
-            val intent = Intent(this, ListadoFacturasActivity::class.java)
-            intent.putExtra("estado", estado)
-            intent.putExtra("importe", importe)
-            intent.putExtra("fechaSuperior", fechaSuperior)
-            intent.putExtra("fechaInferior", fechaInferior)
+        if (fechaInferiorFormateada != null) {
+            if (fechaInferiorFormateada.compareTo(fechaSuperiorFormateada) > 0) {
+                Toast.makeText(this, "Revisa las fechas seleccionadas, puede ser que quiera crear un bucle espacio-temporal", Toast.LENGTH_SHORT).show()
+            } else if (checkboxschecked > 1) {
+                Toast.makeText(
+                    this,
+                    "No puedes seleccionar varios checks de estado a la vez",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                val intent = Intent(this, ListadoFacturasActivity::class.java)
+                intent.putExtra("estado", estado)
+                intent.putExtra("importe", importe)
+                intent.putExtra("fechaSuperior", fechaSuperior)
+                intent.putExtra("fechaInferior", fechaInferior)
 
-            setResult(Activity.RESULT_OK, intent)
-            onClickClose()
+                setResult(Activity.RESULT_OK, intent)
+                onClickClose()
+            }
         }
     }
 

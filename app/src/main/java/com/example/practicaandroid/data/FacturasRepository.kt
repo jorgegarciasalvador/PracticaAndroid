@@ -30,11 +30,11 @@ class FacturasRepository @Inject constructor(
         estado: String,
         importe: Float
     ): List<FacturaModel> {
-        if(estado != "") {
-            return facturasDao.getFacturasFiltradas(estado, importe)
+        return if(estado != "") {
+            facturasDao.getFacturasFiltradas(estado, importe)
                 .map { it.toDomain() }
         }else{
-            return facturasDao.getFacturasFiltradas(importe).map { it.toDomain() }
+            facturasDao.getFacturasFiltradas(importe).map { it.toDomain() }
         }
     }
 }
