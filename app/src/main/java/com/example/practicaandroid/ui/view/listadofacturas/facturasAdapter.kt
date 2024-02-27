@@ -96,13 +96,13 @@ class facturasAdapter(
                 builder.setTitle(
                     getString(
                         binding.ivMasDetallesFactura.context,
-                        R.string.popup_not_working_titulo_informacion_text
+                        R.string.popup_info_autoconsumo_titulo_text
                     )
                 )
                     .setMessage(
                         getString(
                             binding.ivMasDetallesFactura.context,
-                            R.string.popup_not_working_funcionalidad_no_disponible_text
+                            R.string.popup_info_autoconsumo_cuerpoinfo_text
                         )
                     )
                     .setNegativeButton("Cerrar") { _, _ ->

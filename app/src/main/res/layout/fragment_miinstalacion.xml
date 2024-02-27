@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.view.smartsolar.miinstalacionFragment"
-    tools:ignore="UseCompoundDrawables">
+    tools:ignore="UseCompoundDrawables"
+    android:background="@color/white">
 
     <TextView
         android:layout_width="match_parent"

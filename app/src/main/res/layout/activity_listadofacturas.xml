@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.view.listadofacturas.ListadoFacturasActivity">
+    tools:context=".ui.view.listadofacturas.ListadoFacturasActivity"
+    android:background="@color/white">
 
 
     <com.example.practicaandroid.ui.view.reutilizables.ToolbarPersonalizado

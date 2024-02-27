@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.view.BienvenidaActivity">
+    tools:context=".ui.view.BienvenidaActivity"
+    android:background="@color/white">
 
     <Button
         android:id="@+id/btn_listado"

@@ -20,10 +20,10 @@
     <string name="facturadetail_rv_default_precio">54,56</string>
     <string name="facturadetail_rv_default_moneda">€</string>
     <string name="facturadetail_rv_icono_detalles_description">Icono detalles</string>
-    //Popup_not_working
-    <string name="popup_not_working_titulo_informacion_text">Informacion</string>
-    <string name="popup_not_working_funcionalidad_no_disponible_text">Esta funcionalidad aún no está disponible</string>
-    <string name="popu_not_working_close_icon_description">Icono cerrar</string>
+    //Popup_info_autoconsumo
+    <string name="popup_info_autoconsumo_titulo_text" tools:ignore="ExtraTranslation">Estado solicitud autoconsumo</string>
+    <string name="popup_info_autoconsumo_cuerpoinfo_text" tools:ignore="ExtraTranslation">El tiempo estimado de activacion de tu autoconsumo es de 1 a 2 meses, éste variará en función de tu comunidad autónoma y distribuidora</string>
+    <string name="popup_info_autoconsumo_btn_description" tools:ignore="ExtraTranslation">Boton aceptar</string>
     //others
     <string name="title_activity_smartsolar">smartsolar_activity</string>
     <string name="filtro_vacio_text">No hay ninguna factura que se encuentre bajo esas condiciones</string>
@@ -54,6 +54,8 @@
     //fragment_miinstalacion
     <string name="fragment_instalacion_texto_informativo">Aqui tienes los datos de tu instalacion fotovoltaica en tiempo real.</string>
     <string name="fragment_instalacion_descripcion_imagen">Grafico datos de tu instalacion</string>
+    <string name="popup_info_autoconsumo_btn_text">Aceptar</string>
+    <string name="fragment_detalles_masinfo_description">más informacion</string>
 
 
 </resources>

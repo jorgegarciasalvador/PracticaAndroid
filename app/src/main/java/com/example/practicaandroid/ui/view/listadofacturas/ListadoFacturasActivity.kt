@@ -3,6 +3,7 @@ package com.example.practicaandroid.ui.view.listadofacturas
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -46,17 +47,14 @@ class ListadoFacturasActivity : AppCompatActivity() {
         }
     }
 
-    @Deprecated("Deprecated in Java")
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == -1) {
-            data.let {
+    private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+        if (result.resultCode == -1) {
+            result.data.let {
                 facturasViewModel.filtrar(
-                    data!!.getStringExtra("estado")!!,
-                    data.getFloatExtra("importe", 0F),
-                    data.getStringExtra("fechaInferior")!!,
-                    data.getStringExtra("fechaSuperior")!!
+                    result.data!!.getStringExtra("estado")!!,
+                    result.data!!.getFloatExtra("importe", 0F),
+                    result.data!!.getStringExtra("fechaInferior")!!,
+                    result.data!!.getStringExtra("fechaSuperior")!!
                 )
             }
         }else{
@@ -83,7 +81,7 @@ class ListadoFacturasActivity : AppCompatActivity() {
             builder.setTitle(
                 ContextCompat.getString(
                     this,
-                    R.string.popup_not_working_titulo_informacion_text
+                    R.string.popup_info_autoconsumo_titulo_text
                 )
             )
                 .setMessage(
@@ -103,6 +101,6 @@ class ListadoFacturasActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun onClickFiltros() {
         val intent = Intent(this, FiltrosActivity::class.java)
-        startActivityForResult(intent, 1)
+        resultLauncher.launch(intent)
     }
 }
