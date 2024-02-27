@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practicaandroid.R
@@ -21,16 +22,75 @@ class facturasAdapter(
         fun bind(factura: FacturaModel) {
             binding.tvImporteFactura.text = factura.importe.toString()
             binding.tvFechaFactura.text = factura.fecha
-            if (factura.estado == "Pendiente de pago") {
-                binding.tvEstadoFactura.text =
-                    getString(binding.tvEstadoFactura.context, R.string.pendienteDePago_text)
-                binding.tvEstadoFactura.visibility = View.VISIBLE
-            } else {
-                binding.tvEstadoFactura.text = ""
-                binding.tvEstadoFactura.visibility = View.INVISIBLE
+            when (factura.estado) {
+                "Pendiente de pago" -> {
+                    binding.tvEstadoFactura.text =
+                        getString(binding.tvEstadoFactura.context, R.string.pendienteDePago_text)
+                    binding.tvEstadoFactura.visibility = View.VISIBLE
+                    binding.tvEstadoFactura.setTextColor(
+                        getColor(
+                            binding.tvEstadoFactura.context,
+                            R.color.red
+                        )
+                    )
+                }
+
+                "Anulada" -> {
+                    binding.tvEstadoFactura.text =
+                        getString(binding.tvEstadoFactura.context, R.string.anuladas_text)
+                    binding.tvEstadoFactura.visibility = View.VISIBLE
+                    binding.tvEstadoFactura.setTextColor(
+                        getColor(
+                            binding.tvEstadoFactura.context,
+                            R.color.grey
+                        )
+                    )
+                }
+
+                "Pagada" -> {
+                    binding.tvEstadoFactura.text =
+                        getString(binding.tvEstadoFactura.context, R.string.pagadas_text)
+                    binding.tvEstadoFactura.visibility = View.VISIBLE
+                    binding.tvEstadoFactura.setTextColor(
+                        getColor(
+                            binding.tvEstadoFactura.context,
+                            R.color.greenDefaultApp
+                        )
+                    )
+                }
+
+                "Cuota fija" -> {
+                    binding.tvEstadoFactura.text =
+                        getString(binding.tvEstadoFactura.context, R.string.cuota_fija_text)
+                    binding.tvEstadoFactura.visibility = View.VISIBLE
+                    binding.tvEstadoFactura.setTextColor(
+                        getColor(
+                            binding.tvEstadoFactura.context,
+                            R.color.grey
+                        )
+                    )
+                }
+
+                "Plan de pago" -> {
+                    binding.tvEstadoFactura.text =
+                        getString(binding.tvEstadoFactura.context, R.string.plan_de_pago_text)
+                    binding.tvEstadoFactura.visibility = View.VISIBLE
+                    binding.tvEstadoFactura.setTextColor(
+                        getColor(
+                            binding.tvEstadoFactura.context,
+                            R.color.grey
+                        )
+                    )
+                }
+
+                else -> {
+                    binding.tvEstadoFactura.text = ""
+                    binding.tvEstadoFactura.visibility = View.INVISIBLE
+                }
             }
 
             binding.ivMasDetallesFactura.setOnClickListener {
+
                 val builder: AlertDialog.Builder =
                     AlertDialog.Builder(binding.ivMasDetallesFactura.context)
                 builder.setTitle(
@@ -42,7 +102,7 @@ class facturasAdapter(
                     .setMessage(
                         getString(
                             binding.ivMasDetallesFactura.context,
-                            R.string.mensaje_text
+                            R.string.funcionalidad_no_disponible_text
                         )
                     )
                     .setNegativeButton("Cerrar") { _, _ ->
@@ -52,6 +112,7 @@ class facturasAdapter(
                 dialog.show()
             }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

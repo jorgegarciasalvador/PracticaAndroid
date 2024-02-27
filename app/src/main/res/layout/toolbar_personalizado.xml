@@ -33,14 +33,14 @@
                         android:layout_height="20dp"
                         android:contentDescription="@string/icono_izquierda_text"
                         android:src="@drawable/ic_back_arrow_icon"
-                        app:tint="@color/green" />
+                        app:tint="@color/greenDefaultApp" />
 
                     <TextView
                         android:id="@+id/texto_izquierda"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/texto_izquierda_text"
-                        android:textColor="@color/green" />
+                        android:textColor="@color/greenDefaultApp" />
                 </LinearLayout>
 
                 <LinearLayout

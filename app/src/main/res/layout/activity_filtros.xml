@@ -48,14 +48,14 @@
                     android:id="@+id/et_fechaDesde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/default_fecha"
+                    android:autofillHints="creditCardExpirationDate"
+                    android:background="@color/grey"
                     android:clickable="true"
                     android:focusable="false"
-                    android:background="@color/grey"
-                    android:paddingVertical="5dp"
-                    android:paddingHorizontal="15dp"
-                    android:autofillHints="creditCardExpirationDate"
                     android:inputType="date"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/default_fecha"
                     tools:ignore="KeyboardInaccessibleWidget,LabelFor" />
             </LinearLayout>
 
@@ -74,14 +74,14 @@
                     android:id="@+id/et_fechaHasta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/default_fecha"
+                    android:autofillHints="creditCardExpirationDate"
+                    android:background="@color/grey"
                     android:clickable="true"
                     android:focusable="false"
-                    android:background="@color/grey"
-                    android:paddingVertical="5dp"
-                    android:paddingHorizontal="15dp"
-                    android:autofillHints="creditCardExpirationDate"
                     android:inputType="date"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/default_fecha"
                     tools:ignore="KeyboardInaccessibleWidget,LabelFor" />
             </LinearLayout>
         </LinearLayout>
@@ -114,13 +114,13 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="@string/default_importe"
-                    android:textColor="@color/green" />
+                    android:textColor="@color/greenDefaultApp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/default_moneda"
-                    android:textColor="@color/green" />
+                    android:textColor="@color/greenDefaultApp" />
             </LinearLayout>
 
             <com.google.android.material.slider.Slider
@@ -130,8 +130,8 @@
                 android:value="100"
                 android:valueFrom="1"
                 android:valueTo="300"
-                app:thumbColor="@color/green"
-                app:trackColorActive="@color/green" />
+                app:thumbColor="@color/greenDefaultApp"
+                app:trackColorActive="@color/greenDefaultApp" />
         </LinearLayout>
 
         <View
@@ -159,7 +159,8 @@
                 <CheckBox
                     android:id="@+id/cb_pagadas"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/greenDefaultApp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -175,7 +176,8 @@
                 <CheckBox
                     android:id="@+id/cb_anuladas"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/greenDefaultApp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -191,7 +193,8 @@
                 <CheckBox
                     android:id="@+id/cb_cuotafija"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/greenDefaultApp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -207,7 +210,8 @@
                 <CheckBox
                     android:id="@+id/cb_pendientesdepago"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/greenDefaultApp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -223,7 +227,8 @@
                 <CheckBox
                     android:id="@+id/cb_plandepago"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/greenDefaultApp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -237,7 +242,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/greenDefaultApp"
             android:text="@string/btn_aplicar_text"
             android:textColor="@color/white" />
 

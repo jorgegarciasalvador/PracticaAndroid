@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mensaje_text"
+        android:text="@string/funcionalidad_no_disponible_text"
         android:textAlignment="center"/>
 
 </LinearLayout>

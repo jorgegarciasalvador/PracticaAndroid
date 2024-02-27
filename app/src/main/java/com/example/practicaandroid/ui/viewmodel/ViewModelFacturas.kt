@@ -29,7 +29,6 @@ class ViewModelFacturas @Inject constructor(
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun filtrar(estado: String, importe: Float, fechaSuperior: String, fechaInferior: String) {
         viewModelScope.launch {
             val facturas = getFacturasFiltradasUseCase(

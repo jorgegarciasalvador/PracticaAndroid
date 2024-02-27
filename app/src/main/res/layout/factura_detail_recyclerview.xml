@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="5dp"
                 android:paddingBottom="10dp"
-                android:textColor="@android:color/holo_red_light"
+                android:textColor="@color/red"
                 tools:text="@string/pendienteDePago_text" />
         </LinearLayout>
 

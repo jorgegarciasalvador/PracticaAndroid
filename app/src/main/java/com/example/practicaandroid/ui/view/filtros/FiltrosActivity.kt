@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
@@ -12,22 +13,25 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practicaandroid.databinding.ActivityFiltrosBinding
 import com.example.practicaandroid.ui.view.listadofacturas.ListadoFacturasActivity
-import com.example.practicaandroid.ui.viewmodel.ViewModelFacturas
 import com.google.android.material.slider.Slider
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Locale
 
+@RequiresApi(Build.VERSION_CODES.O)
 @AndroidEntryPoint
 class FiltrosActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFiltrosBinding
     private val calendar = Calendar.getInstance()
     lateinit var sharedPreferences: SharedPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +50,20 @@ class FiltrosActivity : AppCompatActivity() {
         setUpPrefrerences()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setUpPrefrerences() {
-        binding.etFechaDesde.setText(sharedPreferences.getString("fechaDesde", "dd/mm/yyyy"))
-        binding.etFechaHasta.setText(sharedPreferences.getString("fechaHasta", "dd/mm/yyyy"))
+        binding.etFechaDesde.setText(
+            sharedPreferences.getString(
+                "fechaDesde", LocalDateTime.now()
+                    .format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+            )
+        )
+        binding.etFechaHasta.setText(
+            sharedPreferences.getString(
+                "fechaHasta", LocalDateTime.now()
+                    .format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+            )
+        )
         binding.sliderImporte.value = sharedPreferences.getFloat("importeSlider", 100F)
         binding.tvImporteSlider.text = sharedPreferences.getString("textoImporteSlider", "100")
         binding.cbPlandepago.isChecked = sharedPreferences.getBoolean("plandepago", false)
@@ -97,7 +112,7 @@ class FiltrosActivity : AppCompatActivity() {
         val importe = binding.sliderImporte.value
         val fechaSuperior = binding.etFechaHasta.text.toString()
         val fechaInferior = binding.etFechaDesde.text.toString()
-        var estado= ""
+        var estado = ""
         var checkboxschecked = 0
         for (i in 0 until binding.layoutChecboxContainer.childCount) {
             val view: View = binding.layoutChecboxContainer.getChildAt(i)
@@ -112,8 +127,11 @@ class FiltrosActivity : AppCompatActivity() {
             }
         }
 
-        if (false /*fechaSuperior < fechaInferior*/) {
-            Toast.makeText(this, "Algo esta mal con las fechas maquina", Toast.LENGTH_SHORT).show()
+        val formatter = SimpleDateFormat("dd/MM/yyyy")
+        val fechaInferiorFormateada = formatter.parse(fechaInferior)
+        val fechaSuperiorFormateada = formatter.parse(fechaSuperior)
+        if (fechaInferiorFormateada.compareTo(fechaSuperiorFormateada) > 0) {
+            Toast.makeText(this, "Revisa las fechas seleccionadas, puede ser que quiera crear un bucle espacio-temporal", Toast.LENGTH_SHORT).show()
         } else if (checkboxschecked > 1) {
             Toast.makeText(
                 this,
@@ -151,8 +169,14 @@ class FiltrosActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun clearFilters() {
-        binding.etFechaDesde.setText("dia/mes/año")
-        binding.etFechaHasta.setText("dia/mes/año")
+        binding.etFechaDesde.setText(
+            LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+        )
+        binding.etFechaHasta.setText(
+            LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+        )
         binding.sliderImporte.value = 100F
         binding.tvImporteSlider.text = "100"
         binding.cbAnuladas.isChecked = false

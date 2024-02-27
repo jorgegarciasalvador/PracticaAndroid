@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.smartsolar.energiaFragment">
+    tools:context=".ui.view.smartsolar.energiaFragment"
+    android:orientation="vertical"
+    android:gravity="center">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/plan_gestiones"/>
+        android:src="@drawable/plan_gestiones"
+        android:contentDescription="@string/fragment_energia_image_contentDescription" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_energia_mensajeInformativo"
+        android:layout_gravity="center"/>
 
-</FrameLayout>
+</LinearLayout>

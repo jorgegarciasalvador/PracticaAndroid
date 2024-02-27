@@ -19,10 +19,11 @@
     <string name="icono_detalles_text">Icono detalles</string>
     //Popup_not_working
     <string name="informacion_text">Informacion</string>
-    <string name="mensaje_text">Esta funcionalidad aún no está disponible</string>
+    <string name="funcionalidad_no_disponible_text">Esta funcionalidad aún no está disponible</string>
     <string name="close_icon_text">Icono cerrar</string>
     //others
     <string name="title_activity_smartsolar">smartsolar_activity</string>
+    <string name="filtro_vacio_text">No hay ninguna factura que se encuentre bajo esas condiciones</string>
     //Toolbar_personalizado
     <string name="icono_izquierda_text">Icono izquierda</string>
     <string name="texto_izquierda_text">Texto izquierda</string>
@@ -44,6 +45,10 @@
     <string name="btn_aplicar_text">Aplicar</string>
     <string name="btn_eliminar_filtros">Eliminar Filtros</string>
     <string name="tv_con_fecha_de_emision_text">Con fecha de emision</string>
+    <string name="fragment_energia_image_contentDescription">Trabajando</string>
+    <string name="fragment_energia_mensajeInformativo">Estamos trabajando en mejorar la App. Tus paneles solares siguen produciendo, en breve podrás seguir viendo tu produccion solar.Sentimos las molestias</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

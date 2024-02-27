@@ -27,4 +27,10 @@ interface FacturasDao {
         estado: String,
         importe: Float
     ): List<FacturaEntity>
+    @Query(
+        "SELECT * FROM facturas_table " +
+                "WHERE importeOrdenacion <= :importe " +
+                "ORDER BY fecha DESC"
+    )
+    suspend fun getFacturasFiltradas(importe: Float):List<FacturaEntity>
 }

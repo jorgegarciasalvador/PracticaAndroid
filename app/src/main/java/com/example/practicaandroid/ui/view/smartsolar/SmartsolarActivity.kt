@@ -42,5 +42,9 @@ class SmartsolarActivity : AppCompatActivity() {
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+
+        binding.toolbar.binding.iconoIzquierda.setOnClickListener {
+            finish()
+        }
     }
 }
