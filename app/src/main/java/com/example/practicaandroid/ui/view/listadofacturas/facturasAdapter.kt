@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practicaandroid.R
-import com.example.practicaandroid.databinding.FacturaDetailRecyclerviewBinding
+import com.example.practicaandroid.databinding.ItemFacturaDetailRecyclerviewBinding
 import com.example.practicaandroid.model.FacturaModel
 
 class facturasAdapter(
@@ -17,7 +17,7 @@ class facturasAdapter(
     RecyclerView.Adapter<facturasAdapter.ViewHolder>() {
     class ViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
-        val binding = FacturaDetailRecyclerviewBinding.bind(view)
+        val binding = ItemFacturaDetailRecyclerviewBinding.bind(view)
 
         fun bind(factura: FacturaModel) {
             binding.tvImporteFactura.text = factura.importe.toString()
@@ -50,7 +50,7 @@ class facturasAdapter(
                 "Pagada" -> {
                     binding.tvEstadoFactura.text =
                         getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_pagadas_text)
-                    binding.tvEstadoFactura.visibility = View.VISIBLE
+                    binding.tvEstadoFactura.visibility = View.INVISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
                             binding.tvEstadoFactura.context,
@@ -96,13 +96,13 @@ class facturasAdapter(
                 builder.setTitle(
                     getString(
                         binding.ivMasDetallesFactura.context,
-                        R.string.popup_info_autoconsumo_titulo_text
+                        R.string.popup_funcionalidad_no_disponible_titulo
                     )
                 )
                     .setMessage(
                         getString(
                             binding.ivMasDetallesFactura.context,
-                            R.string.popup_info_autoconsumo_cuerpoinfo_text
+                            R.string.popup_funcionalidad_no_disponible_mensaje
                         )
                     )
                     .setNegativeButton("Cerrar") { _, _ ->
@@ -119,7 +119,7 @@ class facturasAdapter(
         val layoutInflater = LayoutInflater.from(parent.context)
         return ViewHolder(
             layoutInflater.inflate(
-                R.layout.factura_detail_recyclerview,
+                R.layout.item_factura_detail_recyclerview,
                 parent,
                 false
             )

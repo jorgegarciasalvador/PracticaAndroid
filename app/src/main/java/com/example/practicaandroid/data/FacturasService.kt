@@ -1,6 +1,8 @@
 package com.example.practicaandroid.data
 
 import co.infinum.retromock.Retromock
+import co.infinum.retromock.create
+import com.example.practicaandroid.model.DetallesFacturaModel
 import com.example.practicaandroid.model.FacturaModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -22,6 +24,13 @@ class FacturasService @Inject constructor(
         return withContext(Dispatchers.IO) {
             val response = retromock.create(FacturasApiClient::class.java).getFacturas()
             response.body()?.facturas ?: emptyList()
+        }
+    }
+
+    suspend fun getMockedDetallesFacturas():DetallesFacturaModel{
+        return withContext(Dispatchers.IO) {
+            val response = retromock.create(FacturasApiClient::class.java).getDetallesFacturas()
+            response.body() ?: DetallesFacturaModel("","","","","")
         }
     }
 }

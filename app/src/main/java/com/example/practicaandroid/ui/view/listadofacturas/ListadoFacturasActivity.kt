@@ -54,7 +54,7 @@ class ListadoFacturasActivity : AppCompatActivity() {
     private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
         if (result.resultCode == -1) {
             result.data.let {
-                facturasViewModel.filtrar(
+                facturasViewModel.filtrarFacturas(
                     result.data!!.getStringExtra("estado")!!,
                     result.data!!.getFloatExtra("importe", 0F),
                     result.data!!.getStringExtra("fechaInferior")!!,

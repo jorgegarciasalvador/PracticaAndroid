@@ -2,9 +2,11 @@ package com.example.practicaandroid.ui.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
+import com.example.practicaandroid.R
 import com.example.practicaandroid.databinding.ActivityBienvenidaBinding
 import com.example.practicaandroid.ui.view.listadofacturas.ListadoFacturasActivity
 import com.example.practicaandroid.ui.view.smartsolar.SmartsolarActivity
@@ -20,6 +22,7 @@ class BienvenidaActivity : AppCompatActivity() {
     }
 
     private fun setOnListeners() {
+
         var retromockActivado = false
         binding.btnListado.setOnClickListener {
             val intent = Intent(this, ListadoFacturasActivity::class.java)
@@ -31,9 +34,8 @@ class BienvenidaActivity : AppCompatActivity() {
             val intent = Intent(this, SmartsolarActivity::class.java)
             startActivity(intent)
         }
-
-        binding.switchRetromock.setOnClickListener {it as SwitchCompat
-            if (it.isChecked){
+        binding.switchRetromock.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked){
                 Toast.makeText(this,"Retromock activado", Toast.LENGTH_SHORT).show()
                 retromockActivado = true
             }else{

@@ -18,13 +18,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CAU (Código Autoconsumo)"
+            android:text="@string/fragment_detalles_titulo_texto_cau"
             android:textColor="@color/grey" />
 
         <TextView
+            android:id="@+id/tv_cau"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ES002100..." />
+            android:text="@string/fragment_detalles_default_texto_cau" />
 
 
     </LinearLayout>
@@ -50,13 +51,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Estado solicitud alta autoconsumidor"
+                android:text="@string/fragment_detalles_titulo_texto_estado"
                 android:textColor="@color/grey" />
 
             <TextView
+                android:id="@+id/tv_estado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No hemos recibido ninguna..." />
+                android:text="@string/fragment_detalles_default_texto_estado" />
 
         </LinearLayout>
 
@@ -84,13 +86,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tipo autoconsumo"
+            android:text="@string/fragment_detalles_titulo_texto_tipo"
             android:textColor="@color/grey" />
 
         <TextView
+            android:id="@+id/tv_tipo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Con excedentes y..." />
+            android:text="@string/fragment_detalles_default_texto_tipo" />
 
 
     </LinearLayout>
@@ -110,13 +113,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Compensacion de excedentes"
+            android:text="@string/fragment_detalles_titulo_texto_compensacion"
             android:textColor="@color/grey" />
 
         <TextView
+            android:id="@+id/tv_compensacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Precio PVPC" />
+            android:text="@string/fragment_detalles_default_texto_compsensacion"
+            />
 
 
     </LinearLayout>
@@ -135,13 +140,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Potencia de instalacion"
+            android:text="@string/fragment_detalles_titulo_texto_potencia"
             android:textColor="@color/grey" />
 
-        <TextView
+        <EditText
+            android:id="@+id/tv_potencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="5kWp" />
+            android:background="null"
+            android:text="@string/fragment_detalles_default_texto_potencia" />
 
 
     </LinearLayout>

@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                tools:text="@string/facturadetail_rv_default_moneda" />
+                android:text="@string/facturadetail_rv_default_moneda" />
 
             <ImageView
                 android:id="@+id/iv_mas_detalles_factura"

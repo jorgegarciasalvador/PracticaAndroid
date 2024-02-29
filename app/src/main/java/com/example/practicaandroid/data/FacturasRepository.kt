@@ -1,6 +1,7 @@
 package com.example.practicaandroid.data
 
 import com.example.practicaandroid.data.dao.FacturasDao
+import com.example.practicaandroid.model.DetallesFacturaModel
 import com.example.practicaandroid.model.FacturaEntity
 import com.example.practicaandroid.model.FacturaModel
 import com.example.practicaandroid.model.toDomain
@@ -39,5 +40,9 @@ class FacturasRepository @Inject constructor(
         }else{
             facturasDao.getFacturasFiltradas(importe).map { it.toDomain() }
         }
+    }
+
+    suspend fun getDetallesFacturas():DetallesFacturaModel{
+        return apiService.getMockedDetallesFacturas()
     }
 }

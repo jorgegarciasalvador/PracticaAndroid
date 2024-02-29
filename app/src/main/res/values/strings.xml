@@ -3,6 +3,8 @@
     //Activity_bienvenida
     <string name="activity_bienvenida_texto_btn_allistado">Al listado de facturas</string>
     <string name="activity_bienvenida_texto_btn_asmartsolar">A Smart Solar</string>
+    <string name="activity_bienvenida_texto_retrofit">Retrofit</string>
+    <string name="activity_bienvenida_texto_retromock">Retromock</string>
     //activity_listadofacturas
     <string name="activity_listadofacturas_toolbar_back_icon_description">Back icon</string>
     <string name="activity_listadofacturas_toolbar_texto_izquierda_consumo">Consumo</string>
@@ -24,9 +26,6 @@
     <string name="popup_info_autoconsumo_titulo_text" tools:ignore="ExtraTranslation">Estado solicitud autoconsumo</string>
     <string name="popup_info_autoconsumo_cuerpoinfo_text" tools:ignore="ExtraTranslation">El tiempo estimado de activacion de tu autoconsumo es de 1 a 2 meses, éste variará en función de tu comunidad autónoma y distribuidora</string>
     <string name="popup_info_autoconsumo_btn_description" tools:ignore="ExtraTranslation">Boton aceptar</string>
-    //others
-    <string name="title_activity_smartsolar">smartsolar_activity</string>
-    <string name="filtro_vacio_text">No hay ninguna factura que se encuentre bajo esas condiciones</string>
     //Toolbar_personalizado
     <string name="toolbar_personalizado_icono_izquierda_description">Icono izquierda</string>
     <string name="toolbar_personalizado_texto_izquierda_text">Texto izquierda</string>
@@ -56,8 +55,22 @@
     <string name="fragment_instalacion_descripcion_imagen">Grafico datos de tu instalacion</string>
     <string name="popup_info_autoconsumo_btn_text">Aceptar</string>
     <string name="fragment_detalles_masinfo_description">más informacion</string>
-    <string name="activity_bienvenida_texto_retrofit">Retrofit</string>
-    <string name="activity_bienvenida_texto_retromock">Retromock</string>
-
+    //popup_funcionalidad_no_disponible
+    <string name="popup_funcionalidad_no_disponible_titulo" tools:ignore="ExtraTranslation">Informacion</string>
+    <string name="popup_funcionalidad_no_disponible_mensaje" tools:ignore="ExtraTranslation">Esta funcionalidad aún no está disponible</string>
+    //others
+    <string name="title_activity_smartsolar">smartsolar_activity</string>
+    <string name="filtro_vacio_text">No hay ninguna factura que se encuentre bajo esas condiciones</string>
+    //fragment_detalles
+    <string name="fragment_detalles_titulo_texto_cau">CAU (Código Autoconsumo)</string>
+    <string name="fragment_detalles_titulo_texto_estado">Estado solicitud alta autoconsumidor</string>
+    <string name="fragment_detalles_titulo_texto_tipo">Tipo autoconsumo</string>
+    <string name="fragment_detalles_titulo_texto_compensacion">Compensacion de excedentes</string>
+    <string name="fragment_detalles_titulo_texto_potencia">Potencia de instalacion</string>
+    <string name="fragment_detalles_default_texto_cau">ES002100...</string>
+    <string name="fragment_detalles_default_texto_estado">No hemos recibido ninguna...</string>
+    <string name="fragment_detalles_default_texto_tipo">Con excedentes y...</string>
+    <string name="fragment_detalles_default_texto_compsensacion">Precio PVPC</string>
+    <string name="fragment_detalles_default_texto_potencia">5kWp</string>
 
 </resources>

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".ui.view.filtros.FiltrosActivity"
-    android:background="@color/white">
+    tools:context=".ui.view.filtros.FiltrosActivity">
 
     <com.example.practicaandroid.ui.view.reutilizables.ToolbarPersonalizado
         android:id="@+id/toolbar"
@@ -16,244 +16,249 @@
         app:icono_derecha="@drawable/close_icon"
         app:texto_titulo="@string/activity_filtros_tv_titulo_text" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_filtros_tv_con_fecha_de_emision_text" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:orientation="horizontal"
-            android:paddingVertical="20dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/activity_filtros_tv_fecha_desde_text" />
-
-                <EditText
-                    android:id="@+id/et_fechaDesde"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="creditCardExpirationDate"
-                    android:background="@color/grey"
-                    android:clickable="true"
-                    android:focusable="false"
-                    android:inputType="date"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="5dp"
-                    android:text="@string/activity_filtros_default_fecha"
-                    tools:ignore="KeyboardInaccessibleWidget,LabelFor" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/activity_filtros_tv_fecha_hasta_text" />
-
-                <EditText
-                    android:id="@+id/et_fechaHasta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="creditCardExpirationDate"
-                    android:background="@color/grey"
-                    android:clickable="true"
-                    android:focusable="false"
-                    android:inputType="date"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="5dp"
-                    android:text="@string/activity_filtros_default_fecha"
-                    tools:ignore="KeyboardInaccessibleWidget,LabelFor" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="@color/grey" />
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingVertical="20dp">
+            android:paddingHorizontal="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/activity_filtros_tv_por_un_importe_text" />
+                android:text="@string/activity_filtros_tv_con_fecha_de_emision_text" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingVertical="20dp">
 
-                <TextView
-                    android:id="@+id/tv_importe_slider"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:text="@string/activity_filtros_default_importe"
-                    android:textColor="@color/greenDefaultApp" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_filtros_tv_fecha_desde_text" />
+
+                    <EditText
+                        android:id="@+id/et_fechaDesde"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="creditCardExpirationDate"
+                        android:background="@color/grey"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="5dp"
+                        android:text="@string/activity_filtros_default_fecha"
+                        tools:ignore="KeyboardInaccessibleWidget,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/facturadetail_rv_default_moneda"
-                    android:textColor="@color/greenDefaultApp" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_filtros_tv_fecha_hasta_text" />
+
+                    <EditText
+                        android:id="@+id/et_fechaHasta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="creditCardExpirationDate"
+                        android:background="@color/grey"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="5dp"
+                        android:text="@string/activity_filtros_default_fecha"
+                        tools:ignore="KeyboardInaccessibleWidget,LabelFor" />
+                </LinearLayout>
             </LinearLayout>
 
-            <com.google.android.material.slider.Slider
-                android:id="@+id/slider_importe"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/grey" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:value="100"
-                android:valueFrom="1"
-                android:valueTo="300"
-                app:thumbColor="@color/greenDefaultApp"
-                app:trackColorActive="@color/greenDefaultApp" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:paddingVertical="20dp">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="@color/grey" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activity_filtros_tv_por_un_importe_text" />
 
-        <LinearLayout
-            android:id="@+id/layoutChecboxContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingVertical="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-            <TextView
+                    <TextView
+                        android:id="@+id/tv_importe_slider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:text="@string/activity_filtros_default_importe"
+                        android:textColor="@color/greenDefaultApp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/facturadetail_rv_default_moneda"
+                        android:textColor="@color/greenDefaultApp" />
+                </LinearLayout>
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/slider_importe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:value="100"
+                    android:valueFrom="1"
+                    android:valueTo="300"
+                    app:thumbColor="@color/greenDefaultApp"
+                    app:trackColorActive="@color/greenDefaultApp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:id="@+id/layoutChecboxContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activity_filtros_tv_por_estado_text" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_pagadas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/greenDefaultApp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_filtros_tv_pagadas_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_anuladas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/greenDefaultApp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_filtros_tv_anuladas_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_cuotafija"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/greenDefaultApp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_filtros_tv_cuota_fija_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_pendientesdepago"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/greenDefaultApp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_filtros_tv_pendientes_de_pago_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_plandepago"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/greenDefaultApp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_filtros_tv_plan_de_pago_text" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_aplicar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/activity_filtros_tv_por_estado_text" />
+                android:layout_gravity="center"
+                android:backgroundTint="@color/greenDefaultApp"
+                android:text="@string/activity_filtros_btn_aplicar_text"
+                android:textColor="@color/white" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btn_eliminarFiltros"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/cb_pagadas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/greenDefaultApp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/activity_filtros_tv_pagadas_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/cb_anuladas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/greenDefaultApp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/activity_filtros_tv_anuladas_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/cb_cuotafija"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/greenDefaultApp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/activity_filtros_tv_cuota_fija_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/cb_pendientesdepago"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/greenDefaultApp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/activity_filtros_tv_pendientes_de_pago_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/cb_plandepago"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/greenDefaultApp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/activity_filtros_tv_plan_de_pago_text" />
-            </LinearLayout>
+                android:layout_gravity="center"
+                android:backgroundTint="@android:color/transparent"
+                android:text="@string/activity_filtros_btn_eliminar_filtros_text"
+                android:textColor="@color/grey" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_aplicar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/greenDefaultApp"
-            android:text="@string/activity_filtros_btn_aplicar_text"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/btn_eliminarFiltros"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@android:color/transparent"
-            android:text="@string/activity_filtros_btn_eliminar_filtros_text"
-            android:textColor="@color/grey" />
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
