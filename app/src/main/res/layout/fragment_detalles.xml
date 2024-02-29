@@ -147,9 +147,8 @@
             android:id="@+id/tv_potencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="null"
+            android:background="@android:color/transparent"
             android:text="@string/fragment_detalles_default_texto_potencia" />
-
 
     </LinearLayout>
 
