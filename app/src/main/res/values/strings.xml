@@ -56,6 +56,8 @@
     <string name="fragment_instalacion_descripcion_imagen">Grafico datos de tu instalacion</string>
     <string name="popup_info_autoconsumo_btn_text">Aceptar</string>
     <string name="fragment_detalles_masinfo_description">más informacion</string>
+    <string name="activity_bienvenida_texto_retrofit">Retrofit</string>
+    <string name="activity_bienvenida_texto_retromock">Retromock</string>
 
 
 </resources>

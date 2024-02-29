@@ -17,6 +17,7 @@ import com.example.practicaandroid.model.FacturaModel
 import com.example.practicaandroid.ui.view.filtros.FiltrosActivity
 import com.example.practicaandroid.ui.viewmodel.ViewModelFacturas
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.properties.Delegates
 
 @AndroidEntryPoint
 class ListadoFacturasActivity : AppCompatActivity() {
@@ -24,21 +25,24 @@ class ListadoFacturasActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListadofacturasBinding
     private val facturasViewModel: ViewModelFacturas by viewModels()
     private lateinit var facturasAdapter: facturasAdapter
+    private var retromockActivado by Delegates.notNull<Boolean>()
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListadofacturasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        retromockActivado = intent.getBooleanExtra("retromockactivado", false)
 
-        facturasViewModel.onCreate()
+        facturasViewModel.onCreate(retromockActivado)
 
         facturasViewModel.facturas_.observe(this) {
             setUpRecyclerView(it)
         }
 
         binding.toolbar.binding.iconoDerecha.setOnClickListener {
-            facturasViewModel.onCreate()
+            facturasViewModel.onCreate(retromockActivado)
             onClickFiltros()
         }
 
@@ -58,7 +62,7 @@ class ListadoFacturasActivity : AppCompatActivity() {
                 )
             }
         }else{
-            facturasViewModel.onCreate()
+            facturasViewModel.onCreate(retromockActivado)
         }
     }
 

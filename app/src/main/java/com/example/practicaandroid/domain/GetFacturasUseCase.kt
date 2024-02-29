@@ -8,14 +8,19 @@ import javax.inject.Inject
 class GetFacturasUseCase @Inject constructor(
     private val repository: FacturasRepository
 ) {
-    suspend operator fun invoke(): List<FacturaModel> {
+    suspend operator fun invoke(retromockActivado: Boolean): List<FacturaModel> {
         val facturas = repository.getAllFacturasFromApi()
-        return if (facturas.isNotEmpty()) {
+        val mockedFacturas = repository.getAllFacturasFromRetromock()
+        if (mockedFacturas.isNotEmpty() && retromockActivado) {
+            repository.clearFacturas()
+            repository.insertFacturas(mockedFacturas.map { it -> it.toDatabase() })
+            return mockedFacturas
+        } else if (facturas.isNotEmpty() && !retromockActivado) {
             repository.clearFacturas()
             repository.insertFacturas(facturas.map { it -> it.toDatabase() })
-            facturas
+            return facturas
         } else {
-            repository.getAllFacturasFromRoom()
+            return repository.getAllFacturasFromRoom()
         }
     }
 }

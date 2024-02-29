@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.view.BienvenidaActivity"
-    android:background="@color/white">
+    tools:context=".ui.view.BienvenidaActivity">
 
     <Button
         android:id="@+id/btn_listado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:backgroundTint="@color/greenDefaultApp"
         android:text="@string/activity_bienvenida_texto_btn_allistado" />
 
     <Button
@@ -20,5 +22,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:backgroundTint="@color/greenDefaultApp"
         android:text="@string/activity_bienvenida_texto_btn_asmartsolar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_bienvenida_texto_retrofit" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_retromock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:thumbTint="@color/greenDefaultApp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_bienvenida_texto_retromock" />
+    </LinearLayout>
 </LinearLayout>

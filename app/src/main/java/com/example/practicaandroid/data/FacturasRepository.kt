@@ -13,6 +13,9 @@ class FacturasRepository @Inject constructor(
     suspend fun getAllFacturasFromApi(): List<FacturaModel> {
         return apiService.getFacturas()
     }
+    suspend fun getAllFacturasFromRetromock():List<FacturaModel>{
+        return apiService.getMockedFacturas()
+    }
 
     suspend fun getAllFacturasFromRoom(): List<FacturaModel> {
         return facturasDao.getAllFacturas().map { factura -> factura.toDomain() }

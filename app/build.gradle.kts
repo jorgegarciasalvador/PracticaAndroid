@@ -49,8 +49,10 @@ val roomVersion = "2.6.1"
 val retrofitVersion = "2.9.0"
 val lifecycleVersion = "2.7.0"
 val daggerHiltVersion = "2.50"
+val retromockVersion = "1.1.0"
 
 dependencies {
+    implementation ("co.infinum:retromock:$retromockVersion")
     implementation("com.google.dagger:hilt-android:$daggerHiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$daggerHiltVersion")
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")

@@ -14,13 +14,14 @@ import javax.inject.Inject
 class ViewModelFacturas @Inject constructor(
     private val getFacturasUseCase: GetFacturasUseCase,
     private val getFacturasFiltradasUseCase: GetFacturasFiltradasUseCase
+
 ) : ViewModel() {
 
     var facturas_ = MutableLiveData<List<FacturaModel>>()
 
-    fun onCreate() {
+    fun onCreate(retromockActivado:Boolean) {
         viewModelScope.launch {
-            val facturas = getFacturasUseCase()
+            val facturas = getFacturasUseCase(retromockActivado)
             facturas.let {
                 facturas_.postValue(it)
             }

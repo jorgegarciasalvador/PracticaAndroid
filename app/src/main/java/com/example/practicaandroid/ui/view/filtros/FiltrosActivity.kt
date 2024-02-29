@@ -132,7 +132,11 @@ class FiltrosActivity : AppCompatActivity() {
         val fechaSuperiorFormateada = formatter.parse(fechaSuperior)
         if (fechaInferiorFormateada != null) {
             if (fechaInferiorFormateada.compareTo(fechaSuperiorFormateada) > 0) {
-                Toast.makeText(this, "Revisa las fechas seleccionadas, puede ser que quiera crear un bucle espacio-temporal", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Revisa las fechas seleccionadas, puede ser que quiera crear un bucle espacio-temporal",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else if (checkboxschecked > 1) {
                 Toast.makeText(
                     this,
