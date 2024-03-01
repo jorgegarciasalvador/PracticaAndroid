@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.practicaandroid.model.FacturaEntity
+import com.example.practicaandroid.data.model.FacturaEntity
 
 @Dao
 interface FacturasDao {
@@ -27,10 +27,11 @@ interface FacturasDao {
         estado: String,
         importe: Float
     ): List<FacturaEntity>
+
     @Query(
         "SELECT * FROM facturas_table " +
                 "WHERE importeOrdenacion <= :importe " +
                 "ORDER BY fecha DESC"
     )
-    suspend fun getFacturasFiltradas(importe: Float):List<FacturaEntity>
+    suspend fun getFacturasFiltradas(importe: Float): List<FacturaEntity>
 }

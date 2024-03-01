@@ -1,4 +1,4 @@
-package com.example.practicaandroid.model
+package com.example.practicaandroid.data.model
 
 data class DetallesFacturaModel(
     val codigoAutoconsumo:String,

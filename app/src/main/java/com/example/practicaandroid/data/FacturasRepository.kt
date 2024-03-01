@@ -1,10 +1,10 @@
 package com.example.practicaandroid.data
 
 import com.example.practicaandroid.data.dao.FacturasDao
-import com.example.practicaandroid.model.DetallesFacturaModel
-import com.example.practicaandroid.model.FacturaEntity
-import com.example.practicaandroid.model.FacturaModel
-import com.example.practicaandroid.model.toDomain
+import com.example.practicaandroid.data.model.DetallesFacturaModel
+import com.example.practicaandroid.data.model.FacturaEntity
+import com.example.practicaandroid.data.model.FacturaModel
+import com.example.practicaandroid.data.model.toDomain
 import javax.inject.Inject
 
 class FacturasRepository @Inject constructor(
@@ -14,7 +14,8 @@ class FacturasRepository @Inject constructor(
     suspend fun getAllFacturasFromApi(): List<FacturaModel> {
         return apiService.getFacturas()
     }
-    suspend fun getAllFacturasFromRetromock():List<FacturaModel>{
+
+    suspend fun getAllFacturasFromRetromock(): List<FacturaModel> {
         return apiService.getMockedFacturas()
     }
 
@@ -34,15 +35,15 @@ class FacturasRepository @Inject constructor(
         estado: String,
         importe: Float
     ): List<FacturaModel> {
-        return if(estado != "") {
+        return if (estado != "") {
             facturasDao.getFacturasFiltradas(estado, importe)
                 .map { it.toDomain() }
-        }else{
+        } else {
             facturasDao.getFacturasFiltradas(importe).map { it.toDomain() }
         }
     }
 
-    suspend fun getDetallesFacturas():DetallesFacturaModel{
+    suspend fun getDetallesFacturas(): DetallesFacturaModel {
         return apiService.getMockedDetallesFacturas()
     }
 }

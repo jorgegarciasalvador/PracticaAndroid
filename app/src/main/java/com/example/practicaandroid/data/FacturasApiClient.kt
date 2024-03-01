@@ -2,8 +2,8 @@ package com.example.practicaandroid.data
 
 import co.infinum.retromock.meta.Mock
 import co.infinum.retromock.meta.MockResponse
-import com.example.practicaandroid.model.DetallesFacturaModel
-import com.example.practicaandroid.model.respuestaApiFacturas
+import com.example.practicaandroid.data.model.DetallesFacturaModel
+import com.example.practicaandroid.data.model.respuestaApiFacturas
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -43,12 +43,7 @@ interface FacturasApiClient {
                 " \"tipo\": \"Con excedentes y compsensacion Individual - Consumo\", " +
                 " \"compensacion\": \"Precio PVPC\", " +
                 " \"potencia\": \"5kWp\" " +
-        "}"
+                "}"
     )
     suspend fun getDetallesFacturas(): Response<DetallesFacturaModel>
 }
-
-
-/*
-
- */

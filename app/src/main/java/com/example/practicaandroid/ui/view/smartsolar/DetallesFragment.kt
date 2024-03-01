@@ -15,10 +15,10 @@ import com.example.practicaandroid.ui.viewmodel.ViewModelDetallesFacturas
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class detallesFragment : Fragment() {
+class DetallesFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding: FragmentDetallesBinding
+    private lateinit var binding: FragmentDetallesBinding
     private val detallesFacturasViewModel: ViewModelDetallesFacturas by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,14 +53,14 @@ class detallesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         return binding.root
     }
 
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            detallesFragment().apply {
+            DetallesFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

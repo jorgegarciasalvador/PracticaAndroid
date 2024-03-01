@@ -16,7 +16,7 @@ class SmartsolarActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().add(
             binding.fragmentContainer.id,
-            miinstalacionFragment()
+            MiinstalacionFragment()
         ).commit()
 
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
@@ -24,23 +24,28 @@ class SmartsolarActivity : AppCompatActivity() {
                 when (tab.position) {
                     0 -> supportFragmentManager.beginTransaction().replace(
                         binding.fragmentContainer.id,
-                        miinstalacionFragment()
+                        MiinstalacionFragment()
                     ).commit()
 
                     1 -> supportFragmentManager.beginTransaction().replace(
                         binding.fragmentContainer.id,
-                        energiaFragment()
+                        EnergiaFragment()
                     ).commit()
 
                     2 -> supportFragmentManager.beginTransaction().replace(
                         binding.fragmentContainer.id,
-                        detallesFragment()
+                        DetallesFragment()
                     ).commit()
                 }
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
-            override fun onTabReselected(tab: TabLayout.Tab) {}
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                //Doesnt do anything
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                //Doesnt do anything
+            }
         })
 
         binding.toolbar.binding.iconoIzquierda.setOnClickListener {

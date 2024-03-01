@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practicaandroid.R
 import com.example.practicaandroid.databinding.ActivityListadofacturasBinding
-import com.example.practicaandroid.model.FacturaModel
+import com.example.practicaandroid.data.model.FacturaModel
 import com.example.practicaandroid.ui.view.filtros.FiltrosActivity
 import com.example.practicaandroid.ui.viewmodel.ViewModelFacturas
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +24,7 @@ class ListadoFacturasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListadofacturasBinding
     private val facturasViewModel: ViewModelFacturas by viewModels()
-    private lateinit var facturasAdapter: facturasAdapter
+    private lateinit var facturasAdapter: FacturasAdapter
     private var retromockActivado by Delegates.notNull<Boolean>()
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -74,7 +74,7 @@ class ListadoFacturasActivity : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView(facturas: List<FacturaModel>) {
-        facturasAdapter = facturasAdapter(facturas)
+        facturasAdapter = FacturasAdapter(facturas)
 
         val recyclerView: RecyclerView = binding.rvListadoFacturas
         recyclerView.layoutManager = LinearLayoutManager(this)

@@ -9,15 +9,15 @@ import androidx.core.content.ContextCompat.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practicaandroid.R
 import com.example.practicaandroid.databinding.ItemFacturaDetailRecyclerviewBinding
-import com.example.practicaandroid.model.FacturaModel
+import com.example.practicaandroid.data.model.FacturaModel
 
-class facturasAdapter(
+class FacturasAdapter(
     private val facturas: List<FacturaModel>,
 ) :
-    RecyclerView.Adapter<facturasAdapter.ViewHolder>() {
+    RecyclerView.Adapter<FacturasAdapter.ViewHolder>() {
     class ViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
-        val binding = ItemFacturaDetailRecyclerviewBinding.bind(view)
+        private val binding = ItemFacturaDetailRecyclerviewBinding.bind(view)
 
         fun bind(factura: FacturaModel) {
             binding.tvImporteFactura.text = factura.importe.toString()
