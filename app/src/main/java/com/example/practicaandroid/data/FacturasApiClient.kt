@@ -3,7 +3,7 @@ package com.example.practicaandroid.data
 import co.infinum.retromock.meta.Mock
 import co.infinum.retromock.meta.MockResponse
 import com.example.practicaandroid.data.model.DetallesFacturaModel
-import com.example.practicaandroid.data.model.respuestaApiFacturas
+import com.example.practicaandroid.data.model.RespuestaApiFacturas
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -32,7 +32,7 @@ interface FacturasApiClient {
                 "}"
     )
     @GET("/facturas")
-    suspend fun getFacturas(): Response<respuestaApiFacturas>
+    suspend fun getFacturas(): Response<RespuestaApiFacturas>
 
     @Mock
     @MockResponse(

@@ -12,7 +12,7 @@ data class FacturaModel(
 )
 
 fun FacturaEntity.toDomain() = FacturaModel(fecha, estado, importe)
-data class respuestaApiFacturas(
+data class RespuestaApiFacturas(
     @SerializedName("numFacturas") val numFacturas: Int,
     @SerializedName("facturas") val facturas: List<FacturaModel>
 )

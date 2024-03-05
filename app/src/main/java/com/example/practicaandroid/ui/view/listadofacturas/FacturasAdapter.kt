@@ -21,11 +21,36 @@ class FacturasAdapter(
 
         fun bind(factura: FacturaModel) {
             binding.tvImporteFactura.text = factura.importe.toString()
-            binding.tvFechaFactura.text = factura.fecha
+
+            val fechaUnformatted = factura.fecha
+            val fechaSeparada = fechaUnformatted.split("/")
+            val dia = fechaSeparada[0]
+            val mes: String = when (fechaSeparada[1]) {
+                "01" -> "Ene"
+                "02" -> "Feb"
+                "03" -> "Mar"
+                "04" -> "Abr"
+                "05" -> "May"
+                "06" -> "Jun"
+                "07" -> "Jul"
+                "08" -> "Ago"
+                "09" -> "Sep"
+                "10" -> "Oct"
+                "11" -> "Nov"
+                "12" -> "Dic"
+                else -> ""
+            }
+            val anio = fechaSeparada[2]
+            val fechaFormatted = "$dia $mes $anio"
+
+            binding.tvFechaFactura.text = fechaFormatted
             when (factura.estado) {
                 "Pendiente de pago" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.facturadetail_rv_pendienteDePago_text)
+                        getString(
+                            binding.tvEstadoFactura.context,
+                            R.string.facturadetail_rv_pendienteDePago_text
+                        )
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -37,7 +62,10 @@ class FacturasAdapter(
 
                 "Anulada" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_anuladas_text)
+                        getString(
+                            binding.tvEstadoFactura.context,
+                            R.string.activity_filtros_tv_anuladas_text
+                        )
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -49,7 +77,10 @@ class FacturasAdapter(
 
                 "Pagada" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_pagadas_text)
+                        getString(
+                            binding.tvEstadoFactura.context,
+                            R.string.activity_filtros_tv_pagadas_text
+                        )
                     binding.tvEstadoFactura.visibility = View.INVISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -61,7 +92,10 @@ class FacturasAdapter(
 
                 "Cuota fija" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_cuota_fija_text)
+                        getString(
+                            binding.tvEstadoFactura.context,
+                            R.string.activity_filtros_tv_cuota_fija_text
+                        )
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -73,7 +107,10 @@ class FacturasAdapter(
 
                 "Plan de pago" -> {
                     binding.tvEstadoFactura.text =
-                        getString(binding.tvEstadoFactura.context, R.string.activity_filtros_tv_plan_de_pago_text)
+                        getString(
+                            binding.tvEstadoFactura.context,
+                            R.string.activity_filtros_tv_plan_de_pago_text
+                        )
                     binding.tvEstadoFactura.visibility = View.VISIBLE
                     binding.tvEstadoFactura.setTextColor(
                         getColor(
@@ -89,7 +126,7 @@ class FacturasAdapter(
                 }
             }
 
-            binding.ivMasDetallesFactura.setOnClickListener {
+            binding.rvContainer.setOnClickListener {
 
                 val builder: AlertDialog.Builder =
                     AlertDialog.Builder(binding.ivMasDetallesFactura.context)
